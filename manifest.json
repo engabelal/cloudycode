@@ -1,0 +1,22 @@
+{
+  "name": "Cloudycode - Ahmed Belal",
+  "short_name": "Cloudycode",
+  "description": "DevOps & Cloud Engineer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#11071f",
+  "theme_color": "#7127ba",
+  "icons": [
+    {
+      "src": "/images/cloudycode-light.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

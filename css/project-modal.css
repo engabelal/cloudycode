@@ -1,0 +1,149 @@
+/* Project Modal Styles */
+.project-modal-content {
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.project-modal-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(163, 98, 255, 0.05);
+  border-left: 3px solid var(--purple-light);
+  border-radius: 0.5rem;
+}
+
+.project-modal-heading {
+  font-size: 1.4rem;
+  color: var(--purple-light);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 600;
+}
+
+.project-modal-heading i {
+  font-size: 1.6rem;
+}
+
+.project-modal-text {
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.project-modal-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tech-tag {
+  padding: 0.6rem 1.2rem;
+  background: rgba(163, 98, 255, 0.15);
+  border: 1px solid rgba(163, 98, 255, 0.3);
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.project-modal-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-modal-results li {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.project-modal-results i {
+  color: #10b981;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.project-modal-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.project-modal-github:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(163, 98, 255, 0.4);
+}
+
+.project-details-btn {
+  background: transparent;
+  border: 1px solid rgba(163, 98, 255, 0.3);
+  color: var(--purple-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-details-btn:hover {
+  background: rgba(163, 98, 255, 0.15);
+  border-color: var(--purple-light);
+}
+
+@media screen and (max-width: 768px) {
+  .project-modal-content {
+    max-width: 95%;
+    max-height: 90vh;
+    padding: 2rem 1.5rem;
+  }
+
+  .project-modal-section {
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  .project-modal-heading {
+    font-size: 1.3rem;
+  }
+
+  .project-modal-text,
+  .project-modal-results li {
+    font-size: 1.25rem;
+  }
+
+  .tech-tag {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .project-modal-github {
+    width: 100%;
+    justify-content: center;
+    padding: 1.1rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .project-modal-heading {
+    font-size: 1.2rem;
+  }
+
+  .project-modal-text,
+  .project-modal-results li {
+    font-size: 1.2rem;
+  }
+}

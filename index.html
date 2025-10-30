@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>CloudyCode.dev – Ahmed Belal | DevOps & Cloud Engineer</title>
+    <meta name="title" content="CloudyCode.dev – Ahmed Belal | DevOps & Cloud Engineer" />
+    <meta name="description" content="Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD." />
+    <meta name="keywords" content="DevOps Engineer, Cloud Engineer, AWS, Azure, Kubernetes, Terraform, Docker, CI/CD, Ansible, Infrastructure as Code" />
+    <meta name="author" content="Ahmed Belal" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://cloudycode.dev" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cloudycode.dev" />
+    <meta property="og:title" content="CloudyCode.dev – Ahmed Belal | DevOps & Cloud Engineer" />
+    <meta property="og:description" content="Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD." />
+    <meta property="og:image" content="https://cloudycode.dev/images/og-image.webp" />
+    <meta property="og:site_name" content="CloudyCode.dev" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cloudycode.dev" />
+    <meta property="twitter:title" content="CloudyCode.dev – Ahmed Belal | DevOps & Cloud Engineer" />
+    <meta property="twitter:description" content="Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD." />
+    <meta property="twitter:image" content="https://cloudycode.dev/images/og-image.webp" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link rel="apple-touch-icon" href="./images/cloudycode-light.png" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Preahvihear&display=swap" as="style" />
+    <link rel="dns-prefetch" href="https://cloudycode.dev" />
+    <link rel="preconnect" href="https://cloudycode.dev" crossorigin />
+    <link rel="preload" href="./css/main.css?v=5.4" as="style" />
+    <link rel="preload" href="./images/avatar.webp" as="image" />
+    <link rel="preload" href="./images/cloudycode-light.webp" as="image" />
+
+    <link rel="stylesheet" href="./css/main.css?v=5.4" />
+    <link rel="stylesheet" href="./css/project-modal.css?v=5.4" />
+    <link rel="stylesheet" href="./css/fontawesome-subset.css?v=5.2-beta" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="./css/fontawesome-subset.css?v=5.2-beta" /></noscript>
+  </head>
+  <body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-content">
+        <img src="./images/loading.svg" alt="Loading..." class="loading-spinner" />
+        <p class="loading-text">Initializing...</p>
+        <div class="loading-progress-bar">
+          <div class="loading-progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+
+    <header id="page-header">
+      <div class="container header-wrapper">
+        <a href="https://cloudycode.dev" class="header-logo">
+          <picture>
+            <source srcset="./images/cloudycode-light.webp" type="image/webp">
+            <img class="logo-img" src="./images/cloudycode-light.png" alt="Cloudycode Logo">
+          </picture>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+          <a class="nav-item" href="#main">Home</a>
+          <a class="nav-item" href="#about">About</a>
+          <a class="nav-item" href="#skills">Skills</a>
+          <a class="nav-item" href="#projects">Projects</a>
+          <a class="nav-item" href="#certifications">Certifications</a>
+        </nav>
+        <div class="header__actions">
+          <div class="header__social">
+            <a href="https://blog.cloudycode.dev" target="_blank" rel="noopener" class="social-icon" aria-label="Visit my blog">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </a>
+            <a href="https://github.com/engabelal" target="_blank" rel="noopener" class="social-icon" aria-label="View my GitHub profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/engabelal/" target="_blank" rel="noopener" class="social-icon" aria-label="Connect on LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+            </a>
+          </div>
+          <a class="cta cta--primary" href="mailto:eng.abelal@gmail.com">Get in Touch</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="container introduction">
+        <div class="basic-information">
+          <div class="me">
+            <div class="arrow">
+              <picture>
+                <source srcset="./images/arrow.webp" type="image/webp">
+                <img src="./images/arrow.png" alt="Decorative arrow pointing to greeting" class="arrow-image">
+              </picture>
+              <div class="greeting">
+                Hello! I'm <span class="purple-text-light">Ahmed Belal</span>
+              </div>
+            </div>
+            <div class="avatar">
+              <picture>
+                <source srcset="./images/avatar.webp" type="image/webp">
+                <img class="avatar-image" src="./images/avatar.png" alt="Ahmed Belal - DevOps Engineer">
+              </picture>
+            </div>
+          </div>
+          <div class="quote">
+            <p class="who">A DevOps & Cloud Engineer who</p>
+            <p class="judges-a-book">
+              Codes infrastructure <br />
+              like <span class="purple-text-light">poetry</span>...
+            </p>
+            <p class="affirmative typing-text">
+              <span class="typed-text"></span><span class="cursor">|</span>
+            </p>
+          </div>
+        </div>
+
+        <div id="about" class="objective">
+          With over <strong>12+ years</strong> of experience, from managing <strong>enterprise data centers</strong> to building <strong>cloud platforms</strong>, my journey has always been driven by a passion for <strong>automation</strong>. I constantly built <strong>scripts and tools</strong> to eliminate manual work and solve real problems. That's when I discovered my true passion in <strong>DevOps & Cloud</strong>, where <strong>infrastructure meets code</strong>, and where I now build <strong>automated, scalable systems</strong> that just work.
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-arrow"></div>
+        </div>
+
+        <div class="stats-big-numbers fade-in-section">
+          <div class="stat-big">
+            <div class="stat-big__icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="stat-big__number">12+</div>
+            <div class="stat-big__label">Years Building<br>Infrastructure</div>
+          </div>
+          <div class="stat-big">
+            <div class="stat-big__icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="stat-big__number">99.9%</div>
+            <div class="stat-big__label">System Uptime<br>Guaranteed</div>
+          </div>
+          <div class="stat-big">
+            <div class="stat-big__icon"><i class="fas fa-rocket"></i></div>
+            <div class="stat-big__number">+30%</div>
+            <div class="stat-big__label">Performance<br>Improvement</div>
+          </div>
+          <div class="stat-big">
+            <div class="stat-big__icon"><i class="fas fa-piggy-bank"></i></div>
+            <div class="stat-big__number">-20%</div>
+            <div class="stat-big__label">Cost Reduction<br>Achieved</div>
+          </div>
+        </div>
+
+        <div class="lab-note fade-in-section">
+          <i class="fas fa-quote-left"></i>
+          <i class="fas fa-flask lab-flask"></i>
+          <p><span class="domain-highlight">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps & Cloud projects.</p>
+          <i class="fas fa-quote-right"></i>
+        </div>
+      </section>
+
+      <section class="container what-i-do fade-in-section">
+        <div class="what-i-do-heading">
+          <h1 class="skills-heading">Here's what I do</h1>
+        </div>
+        <div class="what-i-do-content">
+          <div class="what-i-do-image">
+            <img loading="lazy" src="./images/cloud02.svg" alt="Cloud infrastructure with AWS, Azure, and Kubernetes services illustration" />
+          </div>
+          <div class="what-i-do-text">
+            <h2 class="skills-subheading">DevOps and Cloud Stack</h2>
+            <div class="tech-stack-icons">
+              <ul class="dev-icons">
+                <li class="software-skill-inline" name="Azure">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+                    <path d="M22.379 23.343a1.62 1.62 0 0 0 1.536-2.14v.002L17.35 1.76A1.62 1.62 0 0 0 15.816.657H8.184A1.62 1.62 0 0 0 6.65 1.76L.086 21.204a1.62 1.62 0 0 0 1.536 2.139h4.741a1.62 1.62 0 0 0 1.535-1.103l.977-2.892 4.947 3.675c.28.208.618.32.966.32m-3.084-12.531 3.624 10.739a.54.54 0 0 1-.51.713v-.001h-.03a.54.54 0 0 1-.322-.106l-9.287-6.9h4.853m-6.805-1.08-2.53-7.496a.54.54 0 0 1 .51-.713h4.638z"/>
+                  </svg>
+                </li>
+                <li class="software-skill-inline" name="AWS"><i class="fab fa-aws"></i></li>
+                <li class="software-skill-inline" name="Terraform">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+                    <path d="M1.5 4.5h5.25v9.75H1.5zm7.5-3h5.25v13.5H9zm7.5 6h5.25v7.5H16.5zM9 19.5h5.25V24H9z"/>
+                  </svg>
+                </li>
+                <li class="software-skill-inline" name="Docker"><i class="fab fa-docker"></i></li>
+                <li class="software-skill-inline" name="Kubernetes">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+                    <path d="m10.204 14.35.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 2.75l.723.349.722-.347.18-.78-.5-.623h-.804l-.5.623.179.779zm1.5-3.095a.44.44 0 0 0 .7.336l.008.003 2.134-1.513a5.188 5.188 0 0 0-2.992-1.442l.148 2.615.002.001zm10.876 5.97-5.773 7.181a1.6 1.6 0 0 1-1.248.594l-9.261.003a1.6 1.6 0 0 1-1.247-.596l-5.776-7.18a1.583 1.583 0 0 1-.307-1.34L2.1 5.573c.108-.47.425-.864.863-1.073L11.305.513a1.606 1.606 0 0 1 1.385 0l8.345 3.985c.438.209.755.604.863 1.073l2.062 8.955c.108.47-.005.963-.308 1.34zm-3.289-2.057c-.042-.01-.103-.026-.145-.034-.174-.033-.315-.025-.479-.038-.35-.037-.638-.067-.895-.148-.105-.04-.18-.165-.216-.216l-.201-.059a6.45 6.45 0 0 0-.105-2.332 6.465 6.465 0 0 0-.936-2.163c.052-.047.15-.133.177-.159.008-.09.001-.183.094-.282.197-.185.444-.338.743-.522.142-.084.273-.137.415-.242.032-.024.076-.062.11-.089.24-.191.295-.52.123-.736-.172-.216-.506-.236-.745-.045-.034.027-.08.062-.111.088-.134.116-.217.23-.33.35-.246.25-.45.458-.673.609-.097.056-.239.037-.303.033l-.19.135a6.545 6.545 0 0 0-4.146-2.003l-.012-.223c-.065-.062-.143-.115-.163-.25-.022-.268.015-.557.057-.905.023-.163.061-.298.068-.475.001-.04-.001-.099-.001-.142 0-.306-.224-.555-.5-.555-.275 0-.499.249-.499.555l.001.014c0 .041-.002.092 0 .128.006.177.044.312.067.475.042.348.078.637.056.906a.545.545 0 0 1-.162.258l-.012.211a6.424 6.424 0 0 0-4.166 2.003 8.373 8.373 0 0 1-.18-.128c-.09.012-.18.04-.297-.029-.223-.15-.427-.358-.673-.608-.113-.12-.195-.234-.329-.349-.03-.026-.077-.062-.111-.088a.594.594 0 0 0-.348-.132.481.481 0 0 0-.398.176c-.172.216-.117.546.123.737l.007.005.104.083c.142.105.272.159.414.242.299.185.546.338.743.522.076.082.09.226.1.288l.16.143a6.462 6.462 0 0 0-1.02 4.506l-.208.06c-.055.072-.133.184-.215.217-.257.081-.546.11-.895.147-.164.014-.305.006-.48.039-.037.007-.09.02-.133.03l-.004.002-.007.002c-.295.071-.484.342-.423.608.061.267.349.429.645.36l.007-.001.01-.003.129-.029c.17-.046.294-.113.448-.172.33-.118.604-.217.87-.256.112-.009.23.069.288.101l.217-.037a6.5 6.5 0 0 0 2.88 3.596l-.09.218c.033.084.069.199.044.282-.097.252-.263.517-.452.813-.091.136-.185.242-.268.399-.02.037-.045.095-.064.134-.128.275-.034.591.213.71.248.12.556-.007.69-.282v-.002c.02-.039.046-.09.062-.127.07-.162.094-.301.144-.458.106-.331.212-.607.341-.821.05-.082.175-.13.214-.143l.121-.178a6.465 6.465 0 0 0 4.402.006l.118.174c.05.02.168.062.226.155.13.214.236.49.342.82.05.158.074.297.145.46.016.037.043.088.062.126.133.276.442.402.69.282.247-.118.341-.435.213-.71-.02-.039-.045-.096-.065-.134-.083-.156-.177-.261-.268-.398-.19-.296-.346-.541-.443-.793-.04-.13.007-.21.038-.294-.018-.022-.059-.144-.083-.202a6.499 6.499 0 0 0 2.88-3.622c.064.01.176.03.213.038.075-.05.144-.114.28-.104.266.039.54.138.87.256.154.06.277.128.448.173.036.01.088.019.13.028l.009.003.007.001c.297.069.585-.092.645-.36.061-.266-.127-.537-.422-.608zM16.4 9.701l-1.95 1.746v.005a.44.44 0 0 0 .173.757l.003.01 2.526.728a5.199 5.199 0 0 0-.108-1.674A5.208 5.208 0 0 0 16.4 9.7zm-4.013 5.325a.437.437 0 0 0-.404-.232.44.44 0 0 0-.372.233h-.002l-1.268 2.292a5.164 5.164 0 0 0 3.326.003l-1.27-2.296h-.01zm1.888-1.293a.44.44 0 0 0-.27.036.44.44 0 0 0-.214.572l-.003.004 1.01 2.438a5.15 5.15 0 0 0 2.081-2.615l-2.6-.44-.004.005z"/>
+                  </svg>
+                </li>
+                <li class="software-skill-inline" name="Jenkins"><i class="fab fa-jenkins"></i></li>
+                <li class="software-skill-inline" name="Ansible">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+                    <path d="M10.617 11.473l4.686 3.695-3.102-7.662zM12 0C5.371 0 0 5.371 0 12s5.371 12 12 12 12-5.371 12-12S18.629 0 12 0zm5.797 17.305c-.011.471-.403.842-.875.83-.236 0-.416-.09-.664-.293l-6.19-5-2.079 5.203H6.191L11.438 5.44c.124-.314.427-.52.764-.506.338-.014.64.191.764.506l5.248 11.894c.096.235.096.496-.417.971z"/>
+                  </svg>
+                </li>
+                <li class="software-skill-inline" name="Git"><i class="fab fa-git-alt"></i></li>
+                <li class="software-skill-inline" name="Helm">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+                    <path d="M14.033.305c.043.94.043 1.88 0 2.82a11.94 11.94 0 0 0-4.066 0c-.043-.94-.043-1.88 0-2.82a11.94 11.94 0 0 1 4.066 0zm-4.066 21.39c.043.94.043 1.88 0 2.82a11.94 11.94 0 0 1-4.066 0c-.043-.94-.043-1.88 0-2.82a11.94 11.94 0 0 0 4.066 0zm8.132-9.198c.94.043 1.88.043 2.82 0a11.94 11.94 0 0 1 0 4.066c-.94.043-1.88.043-2.82 0a11.94 11.94 0 0 0 0-4.066zm-14.198 0c.94.043 1.88.043 2.82 0a11.94 11.94 0 0 0 0 4.066c-.94.043-1.88.043-2.82 0a11.94 11.94 0 0 1 0-4.066zM12 5.868A6.132 6.132 0 1 0 12 18.13 6.132 6.132 0 0 0 12 5.868zm0 2.486a3.646 3.646 0 1 1 0 7.292 3.646 3.646 0 0 1 0-7.292z"/>
+                  </svg>
+                </li>
+                <li class="software-skill-inline" name="ArgoCD">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+                    <path d="M12.004 0C9.75 0 7.773 1.179 6.667 2.935a6.012 6.012 0 0 0-4.428 5.82 6.012 6.012 0 0 0 6.012 6.012h7.506a6.012 6.012 0 0 0 6.012-6.012 6.012 6.012 0 0 0-4.428-5.82C16.235 1.179 14.258 0 12.004 0zm0 2.004c1.67 0 3.12.97 3.816 2.373a6.012 6.012 0 0 0-3.816 5.634 6.012 6.012 0 0 0-3.816-5.634c.696-1.403 2.146-2.373 3.816-2.373zm0 4.008a4.008 4.008 0 0 1 4.008 4.008 4.008 4.008 0 0 1-4.008 4.008 4.008 4.008 0 0 1-4.008-4.008 4.008 4.008 0 0 1 4.008-4.008zm-6.012 10.02a6.012 6.012 0 0 0-6.012 6.012A6.012 6.012 0 0 0 5.992 24a6.012 6.012 0 0 0 6.012-6.012 6.012 6.012 0 0 0-6.012-6.012zm12.024 0a6.012 6.012 0 0 0-6.012 6.012A6.012 6.012 0 0 0 18.016 24a6.012 6.012 0 0 0 6.012-6.012 6.012 6.012 0 0 0-6.012-6.012zm-12.024 2.004a4.008 4.008 0 0 1 4.008 4.008A4.008 4.008 0 0 1 5.992 24a4.008 4.008 0 0 1-4.008-4.008 4.008 4.008 0 0 1 4.008-4.008zm12.024 0a4.008 4.008 0 0 1 4.008 4.008A4.008 4.008 0 0 1 18.016 24a4.008 4.008 0 0 1-4.008-4.008 4.008 4.008 0 0 1 4.008-4.008z"/>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+            <div class="skills-text-list">
+              <p class="skills-text">⚡ Building and managing CI/CD pipelines for automated deployments</p>
+              <p class="skills-text">⚡ Designing scalable cloud infrastructure on AWS and Azure</p>
+              <p class="skills-text">⚡ Automating infrastructure provisioning with Terraform and Ansible</p>
+              <p class="skills-text">⚡ Containerizing applications with Docker and orchestrating with Kubernetes</p>
+              <p class="skills-text">⚡ Implementing monitoring and logging solutions for production systems</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container what-i-do onprem-section fade-in-section">
+        <div class="what-i-do-content what-i-do-content-reverse">
+          <div class="what-i-do-image what-i-do-image-onprem">
+            <img loading="lazy" src="./images/onprem.svg" alt="On-premise data center with VMware, storage, and networking infrastructure" />
+          </div>
+          <div class="what-i-do-text what-i-do-text-onprem">
+            <h2 class="skills-subheading">Traditional Infrastructure Stack</h2>
+            <div class="tech-stack-icons">
+              <ul class="dev-icons">
+                <li class="software-skill-inline" name="VMware"><i class="fas fa-server"></i></li>
+                <li class="software-skill-inline" name="Cisco"><i class="fas fa-network-wired"></i></li>
+                <li class="software-skill-inline" name="Linux"><i class="fab fa-linux"></i></li>
+                <li class="software-skill-inline" name="Windows"><i class="fab fa-windows"></i></li>
+                <li class="software-skill-inline" name="Storage"><i class="fas fa-database"></i></li>
+                <li class="software-skill-inline" name="Veeam"><i class="fas fa-hdd"></i></li>
+                <li class="software-skill-inline" name="F5"><i class="fas fa-balance-scale"></i></li>
+                <li class="software-skill-inline" name="HA/DR"><i class="fas fa-shield-alt"></i></li>
+              </ul>
+            </div>
+            <div class="skills-text-list">
+              <p class="skills-text">⚡ Architecting VMware vSphere &amp; HCI platforms for enterprise workloads</p>
+              <p class="skills-text">⚡ Designing disaster recovery and business continuity strategies</p>
+              <p class="skills-text">⚡ Optimizing SAN/NAS storage performance and capacity</p>
+              <p class="skills-text">⚡ Maintaining high-availability Linux/Windows infrastructure</p>
+              <p class="skills-text">⚡ Streamlining operations through automation and IaC</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container skills fade-in-section" id="skills">
+        <div class="section-header">
+          <span class="section-badge">Tech Stack</span>
+          <h2 class="section-title">Technologies &amp; Tools</h2>
+          <p class="section-description">
+            Production-grade tools and platforms I use to build scalable cloud
+            infrastructure.
+          </p>
+        </div>
+        <div class="skills__grid">
+          <a href="https://aws.amazon.com" target="_blank" rel="noopener" class="skill-card">
+            <i class="fab fa-aws"></i>
+            <span>AWS</span>
+          </a>
+          <a href="https://azure.microsoft.com" target="_blank" rel="noopener" class="skill-card">
+            <i class="fab fa-microsoft"></i>
+            <span>Azure</span>
+          </a>
+          <a href="https://terraform.io" target="_blank" rel="noopener" class="skill-card">
+            <i class="fas fa-cube"></i>
+            <span>Terraform</span>
+          </a>
+          <a href="https://packer.io" target="_blank" rel="noopener" class="skill-card">
+            <i class="fas fa-box"></i>
+            <span>Packer</span>
+          </a>
+          <a href="https://ansible.com" target="_blank" rel="noopener" class="skill-card">
+            <i class="fas fa-layer-group"></i>
+            <span>Ansible</span>
+          </a>
+          <a href="https://docker.com" target="_blank" rel="noopener" class="skill-card">
+            <i class="fab fa-docker"></i>
+            <span>Docker</span>
+          </a>
+          <a href="https://kubernetes.io" target="_blank" rel="noopener" class="skill-card">
+            <i class="fas fa-dharmachakra"></i>
+            <span>Kubernetes</span>
+          </a>
+          <a href="https://github.com/features/actions" target="_blank" rel="noopener" class="skill-card">
+            <i class="fab fa-github"></i>
+            <span>GitHub Actions</span>
+          </a>
+          <a href="https://jenkins.io" target="_blank" rel="noopener" class="skill-card">
+            <i class="fab fa-jenkins"></i>
+            <span>Jenkins</span>
+          </a>
+          <a href="https://gnu.org/software/bash" target="_blank" rel="noopener" class="skill-card">
+            <i class="fas fa-terminal"></i>
+            <span>Bash</span>
+          </a>
+          <a href="https://python.org" target="_blank" rel="noopener" class="skill-card">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+          </a>
+          <a href="https://linux.org" target="_blank" rel="noopener" class="skill-card">
+            <i class="fab fa-linux"></i>
+            <span>Linux</span>
+          </a>
+          <a href="https://git-scm.com" target="_blank" rel="noopener" class="skill-card">
+            <i class="fab fa-git-alt"></i>
+            <span>Git</span>
+          </a>
+          <a href="https://argo-cd.readthedocs.io" target="_blank" rel="noopener" class="skill-card">
+            <i class="fas fa-sync-alt"></i>
+            <span>ArgoCD</span>
+          </a>
+          <a href="https://fluxcd.io" target="_blank" rel="noopener" class="skill-card">
+            <i class="fas fa-code-branch"></i>
+            <span>Flux</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="container projects fade-in-section" id="projects">
+        <div class="section-header">
+          <span class="section-badge">Portfolio</span>
+          <h2 class="section-title">Featured Production-Ready Projects</h2>
+          <p class="section-description">
+            Open-source references that showcase IaC patterns, automation
+            workflows, and delivery blueprints ready for production teams.
+          </p>
+        </div>
+        <div class="projects__filters">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="cicd" aria-pressed="false">CI/CD</button>
+          <button class="filter-btn" data-filter="infrastructure" aria-pressed="false">
+            Infrastructure
+          </button>
+          <button class="filter-btn" data-filter="serverless" aria-pressed="false">
+            Serverless
+          </button>
+          <button class="filter-btn" data-filter="automation" aria-pressed="false">
+            Automation
+          </button>
+        </div>
+        <div class="projects-list" id="projectsList">
+        </div>
+        <div class="projects__cta">
+          <button id="loadMoreBtn" class="cta cta--primary" aria-label="Load more projects">Load More Projects</button>
+          <a href="https://github.com/engabelal/DevOps-Cloud-Portfolio" target="_blank" rel="noopener" class="cta cta--secondary">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>View All Projects on GitHub</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="container achievements fade-in-section" id="achievements">
+        <div class="section-header">
+          <span class="section-badge">Achievements</span>
+          <h2 class="section-title">Key Highlights</h2>
+        </div>
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <div class="achievement-number">01</div>
+            <div class="achievement-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Enterprise Scale</h3>
+            <p>
+              Led infrastructure design for telecom, utilities, and financial
+              sectors across KSA and Egypt—ensuring 99.9% uptime and zero
+              data-loss in disaster recovery tests.
+            </p>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-number">02</div>
+            <div class="achievement-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Performance</h3>
+            <p>
+              Optimized critical infrastructures achieving 30% faster
+              performance and 20% cost reduction through automation and
+              cloud-native architectures.
+            </p>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-number">03</div>
+            <div class="achievement-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Collaboration</h3>
+            <p>
+              Successfully delivered large-scale IT projects with
+              cross-functional and multi-national teams—bridging business needs
+              with reliable cloud solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container certifications fade-in-section" id="certifications">
+        <div class="section-header">
+          <span class="section-badge">Credentials</span>
+          <h2 class="section-title">Certifications & Licenses</h2>
+        </div>
+        <div class="certifications-scroll">
+          <div class="certifications-track">
+            <div class="cert-badge" onclick="openCertModal('AWS Certified DevOps Engineer - Professional', 'Advanced certification demonstrating expertise in provisioning, operating, and managing distributed systems on AWS.', 'Professional', 'Oct 2025', 'fab fa-aws')">
+              <i class="fab fa-aws"></i>
+              <span>AWS DevOps</span>
+              <div class="cert-level">Professional</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('Microsoft Azure Solutions Architect Expert', 'Expert-level certification for designing cloud and hybrid solutions on Microsoft Azure platform.', 'Expert', 'Jan 2024', 'fab fa-microsoft')">
+              <i class="fab fa-microsoft"></i>
+              <span>Azure Architect</span>
+              <div class="cert-level">Expert</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('Microsoft Azure Administrator Associate', 'Associate-level certification for implementing, managing, and monitoring Azure environments.', 'Associate', 'Jan 2024', 'fab fa-microsoft')">
+              <i class="fab fa-microsoft"></i>
+              <span>Azure Admin</span>
+              <div class="cert-level">Associate</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('Oracle Cloud Infrastructure 2023 Certified Architect', 'Professional certification for designing and implementing OCI solutions and architectures.', 'Professional', 'Jul 2023', 'fas fa-cloud')">
+              <i class="fas fa-cloud"></i>
+              <span>Oracle Cloud</span>
+              <div class="cert-level">Professional</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('VMware Certified Professional - Network Virtualization (VCP-NV 2023)', 'Professional certification for VMware NSX network virtualization and security.', 'Professional', 'Feb 2023', 'fas fa-server')">
+              <i class="fas fa-server"></i>
+              <span>VMware VCP-NV</span>
+              <div class="cert-level">Professional</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('Nutanix Certified Master 5 - Multicloud Infrastructure (NCM-MCI5)', 'Master-level certification for Nutanix hyperconverged infrastructure solutions.', 'Master', 'Nov 2022', 'fas fa-cube')">
+              <i class="fas fa-cube"></i>
+              <span>Nutanix NCM</span>
+              <div class="cert-level">Master</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('Red Hat Certified Specialist in Ansible Automation', 'Specialist certification for automation using Ansible and configuration management.', 'Specialist', 'Feb 2022', 'fab fa-redhat')">
+              <i class="fab fa-redhat"></i>
+              <span>Ansible</span>
+              <div class="cert-level">Specialist</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('CCNP Data Center', 'Professional-level certification for data center networking and infrastructure.', 'Professional', 'Jan 2021', 'fas fa-network-wired')">
+              <i class="fas fa-network-wired"></i>
+              <span>CCNP DC</span>
+              <div class="cert-level">Professional</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('Cisco Certified Specialist - Data Center Design', 'Specialist certification for designing scalable data center architectures.', 'Specialist', 'Jan 2021', 'fas fa-network-wired')">
+              <i class="fas fa-network-wired"></i>
+              <span>Cisco DC Design</span>
+              <div class="cert-level">Specialist</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('VMware Certified Professional - Data Center Virtualization (VCP-DCV 2020)', 'Professional certification for vSphere data center virtualization.', 'Professional', 'Oct 2020', 'fas fa-server')">
+              <i class="fas fa-server"></i>
+              <span>VMware VCP-DCV</span>
+              <div class="cert-level">Professional</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('ITIL Foundation Certificate in IT Service Management', 'Foundation certification for IT service management best practices.', 'Foundation', 'Oct 2020', 'fas fa-certificate')">
+              <i class="fas fa-certificate"></i>
+              <span>ITIL</span>
+              <div class="cert-level">Foundation</div>
+            </div>
+            <div class="cert-badge" onclick="openCertModal('Red Hat Certified Engineer (RHCE)', 'Professional certification for advanced Red Hat Enterprise Linux system administration.', 'Engineer', 'Sep 2016', 'fab fa-redhat')">
+              <i class="fab fa-redhat"></i>
+              <span>RHCE</span>
+              <div class="cert-level">Engineer</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container fade-in-section">
+        <div class="cta-container">
+          <div class="cta-content">
+            <h2>Let's Work Together</h2>
+            <p>
+              Need help with cloud infrastructure, automation, or DevOps? Let's
+              build something great.
+            </p>
+          </div>
+          <div class="cta-buttons">
+            <a class="cta cta--primary cta--large" href="mailto:eng.abelal@gmail.com">
+              <span>Get in Touch</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <a class="cta cta--secondary cta--large" href="https://www.linkedin.com/in/engabelal/" target="_blank" rel="noopener">
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="container work-experience" style="display:none;">
+        <article class="project-card" data-category="cicd">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <i class="fab fa-node-js"></i>
+              </div>
+              <span class="project-card__tag">CI/CD</span>
+            </div>
+            <h3 class="project-card__title">Node.js CI/CD Pipeline</h3>
+            <p class="project-card__description">
+              GitHub Actions and Terraform pipeline delivering sub-15-second
+              deployments, automated testing, and zero-downtime releases on AWS
+              EC2.
+            </p>
+            <div class="project-card__tech">
+              <span>GitHub Actions</span>
+              <span>Terraform</span>
+              <span>AWS EC2</span>
+            </div>
+            <a href="https://github.com/engabelal/simple-nodejs-ec2-cicd" target="_blank" rel="noopener" class="project-card__link">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="serverless">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <i class="fab fa-aws"></i>
+              </div>
+              <span class="project-card__tag">Serverless</span>
+            </div>
+            <h3 class="project-card__title">AWS Serverless Event Platform</h3>
+            <p class="project-card__description">
+              EventBridge, Lambda, and DynamoDB stack codified as IaC—with
+              CloudFront acceleration and automated environment provisioning.
+            </p>
+            <div class="project-card__tech">
+              <span>Lambda</span>
+              <span>API Gateway</span>
+              <span>DynamoDB</span>
+            </div>
+            <a href="https://github.com/engabelal/iac-aws-serverless-event" target="_blank" rel="noopener" class="project-card__link">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="infrastructure">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <span class="project-card__tag">Infrastructure</span>
+            </div>
+            <h3 class="project-card__title">Auto-Scaling Web Infrastructure</h3>
+            <p class="project-card__description">
+              Terraform-built AWS blueprint combining EC2 Auto Scaling, Network
+              Load Balancers, and multi-AZ failover for resilient web tiers.
+            </p>
+            <div class="project-card__tech">
+              <span>Terraform</span>
+              <span>Auto Scaling</span>
+              <span>NLB</span>
+            </div>
+            <a href="https://github.com/engabelal/simple-webapp-ec2-nlb-asg" target="_blank" rel="noopener" class="project-card__link">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="automation">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <span class="project-card__tag">Ansible</span>
+            </div>
+            <h3 class="project-card__title">MERN Stack Automation</h3>
+            <p class="project-card__description">
+              Idempotent Ansible playbooks provisioning MongoDB, Express, React,
+              and Node with hardened configurations and repeatable rollouts.
+            </p>
+            <div class="project-card__tech">
+              <span>Ansible</span>
+              <span>MongoDB</span>
+              <span>React</span>
+            </div>
+            <a href="https://github.com/engabelal/cm-ansible-mern-stack" target="_blank" rel="noopener" class="project-card__link">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="infrastructure">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <i class="fas fa-box"></i>
+              </div>
+              <span class="project-card__tag">Packer</span>
+            </div>
+            <h3 class="project-card__title">Hardened DevOps AMI</h3>
+            <p class="project-card__description">
+              Packer pipeline producing CIS-aligned Ubuntu AMIs preloaded with
+              DevOps tooling, CloudWatch telemetry, and guardrails.
+            </p>
+            <div class="project-card__tech">
+              <span>Packer</span>
+              <span>AWS AMI</span>
+              <span>Security</span>
+            </div>
+            <a href="https://github.com/engabelal/packer-aws-devops-ami" target="_blank" rel="noopener" class="project-card__link">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="infrastructure">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <span class="project-card__tag">Infrastructure</span>
+            </div>
+            <h3 class="project-card__title">Layered MERN with RDS</h3>
+            <p class="project-card__description">
+              Multi-tier Terraform architecture deploying MERN stack with RDS MySQL, VPC isolation, and production-grade networking.
+            </p>
+            <div class="project-card__tech">
+              <span>Terraform</span>
+              <span>RDS</span>
+              <span>VPC</span>
+            </div>
+            <a href="https://github.com/engabelal/terraform-layered-mern-rds" target="_blank" rel="noopener" class="project-card__link">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </a>
+          </article>
+
+          <article class="project-card" data-category="automation">
+            <div class="project-card__header">
+              <div class="project-card__icon">
+                <i class="fas fa-terminal"></i>
+              </div>
+              <span class="project-card__tag">Scripts</span>
+            </div>
+            <h3 class="project-card__title">CloudOps Scripts Kit</h3>
+            <p class="project-card__description">
+              Production-ready shell toolkit for AWS auditing, cost
+              optimisation, and day-two operations automation.
+            </p>
+            <div class="project-card__tech">
+              <span>Shell</span>
+              <span>AWS</span>
+              <span>Automation</span>
+            </div>
+            <a href="https://github.com/engabelal/abcloudops-scripts-kit" target="_blank" rel="noopener" class="project-card__link">
+              View Project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </a>
+          </article>
+        </div>
+        <div class="projects__cta">
+          <a href="https://github.com/engabelal/DevOps-Cloud-Portfolio" target="_blank" rel="noopener" class="cta cta--secondary">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span>View All Projects on GitHub</span>
+          </a>
+        </div>
+      </section>
+
+
+    </main>
+
+    <footer id="page-footer">
+      <div class="container footer-wrapper">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <picture>
+              <source srcset="./images/cloudycode-light.webp" type="image/webp">
+              <img loading="lazy" src="./images/cloudycode-light.png" alt="Cloudycode Logo" class="footer-logo">
+            </picture>
+            <p class="footer-desc">DevOps & Cloud Engineer specializing in building automated, scalable infrastructure solutions.</p>
+            <div class="footer-social">
+              <a href="https://github.com/engabelal" target="_blank" rel="noopener" class="footer-social-link" aria-label="GitHub profile">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/engabelal/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn profile">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://blog.cloudycode.dev" target="_blank" rel="noopener" class="footer-social-link" aria-label="Blog">
+                <i class="fas fa-blog"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-nav">
+            <div class="footer-col">
+              <h4>Navigation</h4>
+              <a href="#main">Home</a>
+              <a href="#about">About</a>
+              <a href="#skills">Skills</a>
+            </div>
+            <div class="footer-col">
+              <h4>Portfolio</h4>
+              <a href="#projects">Projects</a>
+              <a href="#achievements">Achievements</a>
+              <a href="#certifications">Certifications</a>
+            </div>
+            <div class="footer-col">
+              <h4>Contact</h4>
+              <a href="mailto:eng.abelal@gmail.com">eng.abelal@gmail.com</a>
+              <a href="https://github.com/engabelal" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/engabelal/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>
+            <p>&copy; 2025 Cloudycode. All rights reserved.</p>
+            <p class="footer-made">Made with ❤️ by Ahmed Belal</p>
+          </div>
+          <p class="footer-version">v5.4</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Sticky CTA Mobile -->
+    <div class="sticky-cta" id="stickyCta">
+      <a href="mailto:eng.abelal@gmail.com">
+        <span>Get in Touch</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Project Modal -->
+    <div class="cert-modal" id="projectModal" onclick="closeProjectModal(event)">
+      <div class="cert-modal-content project-modal-content" onclick="event.stopPropagation()">
+        <button class="cert-modal-close project-modal-close" onclick="closeProjectModal()">&times;</button>
+        <i class="cert-modal-icon" id="projectModalIcon"></i>
+        <h3 class="cert-modal-title" id="projectModalTitle"></h3>
+        
+        <div class="project-modal-section">
+          <h4 class="project-modal-heading"><i class="fas fa-exclamation-circle"></i> Problem</h4>
+          <p class="project-modal-text" id="projectModalProblem"></p>
+        </div>
+        
+        <div class="project-modal-section">
+          <h4 class="project-modal-heading"><i class="fas fa-lightbulb"></i> Solution</h4>
+          <p class="project-modal-text" id="projectModalSolution"></p>
+        </div>
+        
+        <div class="project-modal-section">
+          <h4 class="project-modal-heading"><i class="fas fa-tools"></i> Tech Stack</h4>
+          <div class="project-modal-tech" id="projectModalTech"></div>
+        </div>
+        
+        <div class="project-modal-section">
+          <h4 class="project-modal-heading"><i class="fas fa-chart-line"></i> Results</h4>
+          <ul class="project-modal-results" id="projectModalResults"></ul>
+        </div>
+        
+        <a id="projectModalLink" target="_blank" rel="noopener" class="project-modal-github">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Certification Modal -->
+    <div class="cert-modal" id="certModal" onclick="closeCertModal(event)">
+      <div class="cert-modal-content" onclick="event.stopPropagation()">
+        <button class="cert-modal-close" onclick="closeCertModal()">&times;</button>
+        <i class="cert-modal-icon" id="certModalIcon"></i>
+        <h3 class="cert-modal-title" id="certModalTitle"></h3>
+        <p class="cert-modal-desc" id="certModalDesc"></p>
+        <div class="cert-modal-meta">
+          <div class="cert-modal-meta-item">
+            <div class="cert-modal-meta-label">Level</div>
+            <div class="cert-modal-meta-value" id="certModalLevel"></div>
+          </div>
+          <div class="cert-modal-meta-item">
+            <div class="cert-modal-meta-label">Year</div>
+            <div class="cert-modal-meta-value" id="certModalYear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js?v=5.4" defer></script>
+    <script src="./js/projects.js?v=5.4" defer></script>
+    <script src="./js/keyboard-nav.js?v=5.4" defer></script>
+
+    <!-- Service Worker -->
+    <script defer>
+      if ('serviceWorker' in navigator && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    </script>
+
+    <!-- Analytics (Plausible - Privacy-friendly) -->
+    <script defer>
+      if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+        const script = document.createElement('script');
+        script.defer = true;
+        script.dataset.domain = 'cloudycode.dev';
+        script.src = 'https://plausible.io/js/script.js';
+        document.head.appendChild(script);
+      }
+    </script>
+
+    <!-- Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ahmed Belal",
+      "url": "https://cloudycode.dev",
+      "image": "https://cloudycode.dev/images/avatar.webp",
+      "jobTitle": "DevOps & Cloud Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CloudyCode.dev"
+      },
+      "description": "Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD.",
+      "sameAs": [
+        "https://github.com/engabelal",
+        "https://www.linkedin.com/in/engabelal/",
+        "https://blog.cloudycode.dev"
+      ],
+      "knowsAbout": [
+        "DevOps",
+        "Cloud Computing",
+        "AWS",
+        "Azure",
+        "Kubernetes",
+        "Docker",
+        "Terraform",
+        "Ansible",
+        "CI/CD",
+        "Infrastructure as Code"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "AWS Certified DevOps Engineer - Professional",
+          "credentialCategory": "Professional Certification",
+          "dateCreated": "2025-10"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Microsoft Azure Solutions Architect Expert",
+          "credentialCategory": "Expert Certification",
+          "dateCreated": "2024-01"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Red Hat Certified Engineer (RHCE)",
+          "credentialCategory": "Professional Certification",
+          "dateCreated": "2016-09"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "DevOps & Cloud Projects",
+      "itemListElement": [
+        {
+          "@type": "SoftwareSourceCode",
+          "position": 1,
+          "name": "Node.js CI/CD Pipeline",
+          "description": "GitHub Actions and Terraform pipeline delivering sub-15-second deployments, automated testing, and zero-downtime releases on AWS EC2.",
+          "programmingLanguage": "JavaScript",
+          "codeRepository": "https://github.com/engabelal/simple-nodejs-ec2-cicd",
+          "keywords": "CI/CD, GitHub Actions, Terraform, AWS"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "position": 2,
+          "name": "AWS Serverless Event Platform",
+          "description": "EventBridge, Lambda, and DynamoDB stack codified as IaC with CloudFront acceleration and automated environment provisioning.",
+          "programmingLanguage": "Python",
+          "codeRepository": "https://github.com/engabelal/iac-aws-serverless-event",
+          "keywords": "Serverless, Lambda, DynamoDB, AWS"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "position": 3,
+          "name": "Auto-Scaling Web Infrastructure",
+          "description": "Terraform-built AWS blueprint combining EC2 Auto Scaling, Network Load Balancers, and multi-AZ failover for resilient web tiers.",
+          "programmingLanguage": "HCL",
+          "codeRepository": "https://github.com/engabelal/simple-webapp-ec2-nlb-asg",
+          "keywords": "Terraform, Auto Scaling, AWS, Infrastructure"
+        }
+      ]
+    }
+    </script>
+  </body>
+</html>

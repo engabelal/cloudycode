@@ -1,0 +1,46 @@
+/* Local Fonts - Better Performance */
+
+/* Plus Jakarta Sans - Regular 400 */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_KU7NShXUEKi4Rw.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Plus Jakarta Sans - Medium 500 */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_907NShXUEKi4Rw.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Plus Jakarta Sans - SemiBold 600 */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qUjNShXUEKi4Rw.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Plus Jakarta Sans - Bold 700 */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_mEjNShXUEKi4Rw.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Preahvihear - Regular 400 */
+@font-face {
+  font-family: 'Preahvihear';
+  src: url('https://fonts.gstatic.com/s/preahvihear/v29/6NUS8F-dNQeEYhzj7uluxswE49FJf8Wv.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
