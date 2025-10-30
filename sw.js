@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cloudycode-v5.3';
+const CACHE_NAME = 'cloudycode-v5.6-beta';
 const urlsToCache = [
   '/',
   '/index.html',
