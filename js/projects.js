@@ -1,6 +1,28 @@
 // Projects Data
 const allProjects = [
   { 
+    icon: 'fab fa-docker', 
+    title: 'ECS Fargate Blue/Green Deployment', 
+    desc: 'Production-ready containerized deployment using AWS ECS Fargate with automated Blue/Green strategy via CodeDeploy, zero-downtime updates, and GitHub Actions CI/CD.', 
+    link: 'https://github.com/engabelal/ecs-fargate-terraform-deployment', 
+    category: 'cicd',
+    problem: 'Container deployments causing downtime and lacking automated rollback capabilities',
+    solution: 'Blue/Green deployment with CodeDeploy, modular Terraform (9 modules), GitHub Actions OIDC, and automated rollback on failure',
+    techStack: ['ECS Fargate', 'CodeDeploy', 'Terraform', 'GitHub Actions', 'ALB', 'ECR', 'DynamoDB'],
+    results: ['Zero downtime deployments', 'Automatic rollback', 'Serverless containers', '9 reusable Terraform modules']
+  },
+  { 
+    icon: 'fab fa-docker', 
+    title: 'ECS Fargate Blue/Green Deployment', 
+    desc: 'Production-ready containerized deployment using AWS ECS Fargate with automated Blue/Green strategy via CodeDeploy, zero-downtime updates, and GitHub Actions CI/CD.', 
+    link: 'https://github.com/engabelal/ecs-fargate-terraform-deployment', 
+    category: 'infrastructure',
+    problem: 'Container deployments causing downtime and lacking automated rollback capabilities',
+    solution: 'Blue/Green deployment with CodeDeploy, modular Terraform (9 modules), GitHub Actions OIDC, and automated rollback on failure',
+    techStack: ['ECS Fargate', 'CodeDeploy', 'Terraform', 'GitHub Actions', 'ALB', 'ECR', 'DynamoDB'],
+    results: ['Zero downtime deployments', 'Automatic rollback', 'Serverless containers', '9 reusable Terraform modules']
+  },
+  { 
     icon: 'fab fa-node-js', 
     title: 'Node.js CI/CD Pipeline', 
     desc: 'GitHub Actions and Terraform pipeline delivering sub-15-second deployments, automated testing, and zero-downtime releases on AWS EC2.', 
