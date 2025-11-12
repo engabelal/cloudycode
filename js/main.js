@@ -198,6 +198,17 @@ document.addEventListener("DOMContentLoaded", () => {
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
 
+  // Initialize AOS
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      once: true,
+      offset: 100,
+      disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    });
+  }
+
   const whatIDoImage = document.querySelector(".what-i-do-image");
   const whatIDoText = document.querySelector(".what-i-do-text");
   const onpremImage = document.querySelector(".what-i-do-image-onprem");

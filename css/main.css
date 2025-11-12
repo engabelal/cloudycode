@@ -3492,3 +3492,55 @@ footer#page-footer {
     font-size: 0.8rem;
   }
 }
+
+/* Performance Optimizations */
+img {
+  content-visibility: auto;
+}
+
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Focus visible for better keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--purple-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Smooth font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* GPU acceleration for animations */
+.stat-big,
+.skill-card,
+.project-list-item,
+.cert-badge,
+.achievement-card {
+  will-change: transform;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cert-badge {
+    animation: none !important;
+  }
+  
+  .scroll-indicator {
+    animation: none !important;
+  }
+  
+  .objective::after {
+    animation: none !important;
+  }
+}
