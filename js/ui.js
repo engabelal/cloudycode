@@ -194,16 +194,20 @@ export function hideLoadingScreen() {
     setTimeout(() => loadingScreen.remove(), 400);
   };
 
-  // If page already loaded, hide immediately
+  // Always show loading screen for at least 500ms
+  const minLoadTime = 500;
+  const startTime = Date.now();
+
+  const hideWithDelay = () => {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, minLoadTime - elapsed);
+    setTimeout(hideScreen, remaining);
+  };
+
   if (document.readyState === 'complete') {
-    hideScreen();
+    hideWithDelay();
   } else {
-    // Wait for page load, with max 500ms timeout
-    const loadTimeout = setTimeout(hideScreen, 500);
-    window.addEventListener('load', () => {
-      clearTimeout(loadTimeout);
-      hideScreen();
-    }, { once: true });
+    window.addEventListener('load', hideWithDelay, { once: true });
   }
 }
 
