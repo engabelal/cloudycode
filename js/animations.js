@@ -1,9 +1,11 @@
 // Animations Module
+import { safeExecute, isLibraryLoaded } from './error-handler.js';
 
 // Typing Effect
 export function initTypingEffect() {
-  const typedTextSpan = document.querySelector('.typed-text');
-  if (!typedTextSpan) return;
+  return safeExecute(() => {
+    const typedTextSpan = document.querySelector('.typed-text');
+    if (!typedTextSpan) return;
 
   const texts = [
     'Automated, resilient, and brilliantly efficient',
@@ -39,12 +41,18 @@ export function initTypingEffect() {
     }
   }
 
-  setTimeout(type, 1500);
+    setTimeout(type, 1500);
+  }, null, 'Typing Effect');
 }
 
 // Particles.js Configuration
 export function initParticles() {
-  if (typeof particlesJS === 'undefined') return;
+  if (!isLibraryLoaded('particlesJS')) {
+    console.warn('Particles.js not loaded, skipping animation');
+    return;
+  }
+  
+  return safeExecute(() => {
 
   particlesJS('particles-js', {
     particles: {
@@ -94,25 +102,33 @@ export function initParticles() {
       }
     },
     retina_detect: true
-  });
+    });
+  }, null, 'Particles.js');
 }
 
 // AOS Initialization
 export function initAOS() {
-  if (typeof AOS === 'undefined') return;
+  if (!isLibraryLoaded('AOS')) {
+    console.warn('AOS library not loaded, skipping animations');
+    return;
+  }
+  
+  return safeExecute(() => {
 
   AOS.init({
     duration: 800,
     easing: 'ease-out',
     once: true,
     offset: 100,
-    disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  });
+      disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    });
+  }, null, 'AOS');
 }
 
 // Fade-in Sections Observer
 export function initFadeInSections() {
-  const fadeInSections = document.querySelectorAll('.fade-in-section');
+  return safeExecute(() => {
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
   
   const sectionObserver = new IntersectionObserver(
     (entries) => {
@@ -134,18 +150,21 @@ export function initFadeInSections() {
     { threshold: 0.1, rootMargin: '50px' }
   );
 
-  fadeInSections.forEach((section) => sectionObserver.observe(section));
+    fadeInSections.forEach((section) => sectionObserver.observe(section));
+  }, null, 'Fade-in Sections');
 }
 
 // What I Do Section Animation
 export function initWhatIDoAnimation(observer) {
-  const whatIDoImage = document.querySelector('.what-i-do-image');
+  return safeExecute(() => {
+    const whatIDoImage = document.querySelector('.what-i-do-image');
   const whatIDoText = document.querySelector('.what-i-do-text');
   const onpremImage = document.querySelector('.what-i-do-image-onprem');
   const onpremText = document.querySelector('.what-i-do-text-onprem');
 
   if (whatIDoImage) observer.observe(whatIDoImage);
   if (whatIDoText) observer.observe(whatIDoText);
-  if (onpremImage) observer.observe(onpremImage);
-  if (onpremText) observer.observe(onpremText);
+    if (onpremImage) observer.observe(onpremImage);
+    if (onpremText) observer.observe(onpremText);
+  }, null, 'What I Do Animation');
 }

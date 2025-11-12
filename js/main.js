@@ -17,6 +17,11 @@ import {
   hideLoadingScreen,
   initModalEscapeHandler
 } from './ui.js';
+import { 
+  initGlobalErrorHandler,
+  initImageErrorHandlers,
+  initNetworkMonitor
+} from './error-handler.js';
 
 // Scroll Animation Observer
 const observer = createObserver((entries) => {
@@ -26,6 +31,10 @@ const observer = createObserver((entries) => {
     }
   });
 });
+
+// Initialize error handling first
+initGlobalErrorHandler();
+initNetworkMonitor();
 
 // Force scroll to top on page load
 forceScrollReset();
@@ -44,6 +53,7 @@ initHeader();
 initMobileMenu();
 initTypingEffect();
 initParticles();
+initImageErrorHandlers();
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,4 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyCTA();
   initBackToTop();
   initModalEscapeHandler();
+  
+  // Re-check images after DOM is fully loaded
+  setTimeout(initImageErrorHandlers, 1000);
 });
