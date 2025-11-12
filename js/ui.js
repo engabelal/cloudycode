@@ -61,6 +61,10 @@ export function initMobileMenu() {
   // Close menu when clicking nav items
   navItems.forEach((item) => {
     item.addEventListener('click', closeMenu);
+    // Add loaded class after animation completes
+    item.addEventListener('animationend', () => {
+      item.classList.add('loaded');
+    }, { once: true });
   });
 
   // Close menu on escape key
