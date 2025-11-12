@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Note Designs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #11071f;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            padding: 4rem 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, #a362ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .designs-grid {
+            display: grid;
+            gap: 4rem;
+        }
+
+        .design-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(163, 98, 255, 0.2);
+        }
+
+        .design-title {
+            font-size: 1.4rem;
+            color: #a362ff;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Design 1 - Glowing Card */
+        .lab-note-1 {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 3rem;
+            background: linear-gradient(135deg, rgba(163, 98, 255, 0.1), rgba(0, 212, 255, 0.05));
+            border-radius: 1.5rem;
+            border: 2px solid rgba(163, 98, 255, 0.3);
+            box-shadow: 0 0 40px rgba(163, 98, 255, 0.2);
+            animation: glow1 3s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        @keyframes glow1 {
+            0%, 100% { box-shadow: 0 0 40px rgba(163, 98, 255, 0.2); }
+            50% { box-shadow: 0 0 60px rgba(163, 98, 255, 0.4); }
+        }
+
+        .lab-note-1 .flask {
+            font-size: 3rem;
+            color: #a362ff;
+            filter: drop-shadow(0 0 15px rgba(163, 98, 255, 0.6));
+            animation: float 3s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .lab-note-1 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .lab-note-1 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 2 - Neon Border */
+        .lab-note-2 {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 3rem;
+            background: rgba(17, 7, 31, 0.8);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .lab-note-2::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 3px;
+            background: linear-gradient(45deg, #a362ff, #00d4ff, #00ff88, #a362ff);
+            background-size: 300% 300%;
+            border-radius: 1rem;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: neonBorder 4s linear infinite;
+        }
+
+        @keyframes neonBorder {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        .lab-note-2 .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lab-note-2 .flask {
+            font-size: 3rem;
+            color: #a362ff;
+            flex-shrink: 0;
+        }
+
+        .lab-note-2 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .lab-note-2 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 3 - Gradient Background */
+        .lab-note-3 {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, #7127ba 0%, #a362ff 50%, #00d4ff 100%);
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        .lab-note-3::before {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #11071f;
+            border-radius: 2rem;
+            z-index: 0;
+        }
+
+        .lab-note-3 .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lab-note-3 .flask {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #a362ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .lab-note-3 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .lab-note-3 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 4 - Glass Morphism */
+        .lab-note-4 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 3rem;
+            background: rgba(163, 98, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .lab-note-4 .content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lab-note-4 .flask {
+            font-size: 3rem;
+            color: #a362ff;
+            animation: rotate 4s linear infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .lab-note-4 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .lab-note-4 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 5 - Animated Dots */
+        .lab-note-5 {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+            border: 1px solid rgba(163, 98, 255, 0.3);
+            overflow: hidden;
+        }
+
+        .lab-note-5::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(163, 98, 255, 0.3), transparent);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            animation: moveDot1 5s ease-in-out infinite;
+        }
+
+        .lab-note-5::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.3), transparent);
+            border-radius: 50%;
+            bottom: -75px;
+            right: -75px;
+            animation: moveDot2 4s ease-in-out infinite;
+        }
+
+        @keyframes moveDot1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+        }
+
+        @keyframes moveDot2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-30px, -30px); }
+        }
+
+        .lab-note-5 .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lab-note-5 .flask {
+            font-size: 3rem;
+            color: #a362ff;
+            flex-shrink: 0;
+        }
+
+        .lab-note-5 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .lab-note-5 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 6 - Split Design */
+        .lab-note-6 {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            padding: 2.5rem 3rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 1rem;
+            border-left: 4px solid #a362ff;
+            box-shadow: -4px 0 20px rgba(163, 98, 255, 0.2);
+        }
+
+        .lab-note-6 .icon-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(163, 98, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .lab-note-6 .flask {
+            font-size: 3rem;
+            color: #a362ff;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .lab-note-6 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            font-style: italic;
+        }
+
+        .lab-note-6 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 7 - Minimal Badge */
+        .lab-note-7 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            background: transparent;
+            border: 2px dashed rgba(163, 98, 255, 0.3);
+            border-radius: 1rem;
+            position: relative;
+        }
+
+        .lab-note-7::before {
+            content: 'LAB';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #11071f;
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            color: #a362ff;
+            font-weight: 700;
+        }
+
+        .lab-note-7 .content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lab-note-7 .flask {
+            font-size: 3rem;
+            color: #a362ff;
+            flex-shrink: 0;
+        }
+
+        .lab-note-7 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .lab-note-7 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 8 - Card with Shadow */
+        .lab-note-8 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 3rem;
+            background: linear-gradient(135deg, rgba(113, 39, 186, 0.2), rgba(163, 98, 255, 0.1));
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 60px rgba(163, 98, 255, 0.3);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .lab-note-8:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(163, 98, 255, 0.4);
+        }
+
+        .lab-note-8 .content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lab-note-8 .flask {
+            font-size: 3rem;
+            color: #a362ff;
+            filter: drop-shadow(0 0 10px rgba(163, 98, 255, 0.5));
+            flex-shrink: 0;
+        }
+
+        .lab-note-8 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .lab-note-8 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 9 - Quotes Style */
+        .lab-note-9 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 1rem;
+            border: 1px solid rgba(163, 98, 255, 0.2);
+            position: relative;
+        }
+
+        .lab-note-9 .quote-left,
+        .lab-note-9 .quote-right {
+            position: absolute;
+            font-size: 1.8rem;
+            color: rgba(163, 98, 255, 0.3);
+        }
+
+        .lab-note-9 .quote-left {
+            top: 10px;
+            left: 15px;
+        }
+
+        .lab-note-9 .quote-right {
+            bottom: 10px;
+            right: 15px;
+        }
+
+        .lab-note-9 .content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0 2rem;
+        }
+
+        .lab-note-9 .flask {
+            font-size: 3rem;
+            color: #a362ff;
+            filter: drop-shadow(0 0 10px rgba(163, 98, 255, 0.5));
+            flex-shrink: 0;
+        }
+
+        .lab-note-9 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .lab-note-9 .domain {
+            color: #a362ff;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Design 10 - Futuristic */
+        .lab-note-10 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 3rem;
+            background: rgba(17, 7, 31, 0.9);
+            border-radius: 0;
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+            border: 2px solid rgba(163, 98, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lab-note-10::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(163, 98, 255, 0.3), transparent);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .lab-note-10 .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lab-note-10 .flask {
+            font-size: 3rem;
+            color: #00d4ff;
+            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+            flex-shrink: 0;
+        }
+
+        .lab-note-10 p {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Courier New', monospace;
+            font-style: italic;
+        }
+
+        .lab-note-10 .domain {
+            color: #00ff88;
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lab Note - 10 Design Options</h1>
+        
+        <div class="designs-grid">
+            <!-- Design 1 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 1 - Glowing Card</div>
+                <div class="lab-note-1">
+                    <i class="fas fa-flask flask"></i>
+                    <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                </div>
+            </div>
+
+            <!-- Design 2 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 2 - Neon Border Animation</div>
+                <div class="lab-note-2">
+                    <div class="content">
+                        <i class="fas fa-flask flask"></i>
+                        <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design 3 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 3 - Gradient Background</div>
+                <div class="lab-note-3">
+                    <div class="content">
+                        <i class="fas fa-flask flask"></i>
+                        <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design 4 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 4 - Glass Morphism</div>
+                <div class="lab-note-4">
+                    <div class="content">
+                        <i class="fas fa-flask flask"></i>
+                        <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design 5 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 5 - Animated Dots Background</div>
+                <div class="lab-note-5">
+                    <div class="content">
+                        <i class="fas fa-flask flask"></i>
+                        <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design 6 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 6 - Split Design with Icon</div>
+                <div class="lab-note-6">
+                    <div class="icon-section">
+                        <i class="fas fa-flask flask"></i>
+                    </div>
+                    <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                </div>
+            </div>
+
+            <!-- Design 7 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 7 - Minimal Badge Style</div>
+                <div class="lab-note-7">
+                    <div class="content">
+                        <i class="fas fa-flask flask"></i>
+                        <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design 8 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 8 - Card with Hover Shadow</div>
+                <div class="lab-note-8">
+                    <div class="content">
+                        <i class="fas fa-flask flask"></i>
+                        <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design 9 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 9 - Quotes Style ⭐</div>
+                <div class="lab-note-9">
+                    <i class="fas fa-quote-left quote-left"></i>
+                    <div class="content">
+                        <i class="fas fa-flask flask"></i>
+                        <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                    </div>
+                    <i class="fas fa-quote-right quote-right"></i>
+                </div>
+            </div>
+
+            <!-- Design 10 -->
+            <div class="design-wrapper">
+                <div class="design-title">Design 10 - Futuristic Scan Effect</div>
+                <div class="lab-note-10">
+                    <div class="content">
+                        <i class="fas fa-flask flask"></i>
+                        <p><span class="domain">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps &amp; Cloud demo projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

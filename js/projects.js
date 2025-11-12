@@ -183,9 +183,41 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // Project Modal
+let lastProjectFocusedElement = null;
+
+function trapModalFocus(modal) {
+  const focusableElements = modal.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  const firstFocusable = focusableElements[0];
+  const lastFocusable = focusableElements[focusableElements.length - 1];
+
+  modal.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          lastFocusable.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          firstFocusable.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+}
+
 function openProjectModal(project) {
+  lastProjectFocusedElement = document.activeElement;
+  
   const modal = document.getElementById('projectModal');
-  document.getElementById('projectModalIcon').className = project.icon;
+  const iconElement = document.getElementById('projectModalIcon');
+  
+  // Preserve icon classes properly
+  iconElement.className = `cert-modal-icon ${project.icon}`;
+  
   document.getElementById('projectModalTitle').textContent = project.title;
   document.getElementById('projectModalProblem').textContent = project.problem;
   document.getElementById('projectModalSolution').textContent = project.solution;
@@ -198,12 +230,42 @@ function openProjectModal(project) {
   
   document.getElementById('projectModalLink').href = project.link;
   modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  
+  // Trap focus
+  trapModalFocus(modal);
+  
+  // Focus close button
+  setTimeout(() => {
+    const closeBtn = modal.querySelector('.project-modal-close');
+    if (closeBtn) closeBtn.focus();
+  }, 100);
 }
 
-function closeProjectModal(event) {
+function closeProjectModal() {
   const modal = document.getElementById('projectModal');
-  if (!event || event.target.id === 'projectModal' || event.target.classList.contains('project-modal-close')) {
-    modal.classList.remove('active');
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  
+  // Return focus
+  if (lastProjectFocusedElement) {
+    lastProjectFocusedElement.focus();
+    lastProjectFocusedElement = null;
+  }
+}
+
+// Event listeners for modal
+const projectModal = document.getElementById('projectModal');
+if (projectModal) {
+  projectModal.addEventListener('click', (e) => {
+    if (e.target.id === 'projectModal') {
+      closeProjectModal();
+    }
+  });
+  
+  const closeBtn = projectModal.querySelector('.project-modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeProjectModal);
   }
 }
 

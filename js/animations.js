@@ -8,10 +8,9 @@ export function initTypingEffect() {
     if (!typedTextSpan) return;
 
   const texts = [
-    'Automated, resilient, and brilliantly efficient',
-    'Infrastructure as code, deployed with confidence',
+    'Structured, stable, and effortlessly alive',
     'Built for scale, designed for reliability',
-    'Cloud-native, container-ready, production-proven'
+    'Automated, resilient, and brilliantly efficient'
   ];
   
   let textIndex = 0;
@@ -49,6 +48,12 @@ export function initTypingEffect() {
 export function initParticles() {
   if (!isLibraryLoaded('particlesJS')) {
     console.warn('Particles.js not loaded, skipping animation');
+    return;
+  }
+  
+  // Respect prefers-reduced-motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    console.log('Particles disabled due to prefers-reduced-motion');
     return;
   }
   
@@ -147,7 +152,7 @@ export function initFadeInSections() {
         }
       });
     },
-    { threshold: 0.1, rootMargin: '50px' }
+    { threshold: 0.3, rootMargin: '0px' }
   );
 
     fadeInSections.forEach((section) => sectionObserver.observe(section));

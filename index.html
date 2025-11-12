@@ -3,9 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
 
     <!-- Primary Meta Tags -->
     <title>CloudyCode.dev – Ahmed Belal | DevOps & Cloud Engineer</title>
@@ -39,7 +36,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
-    <link rel="apple-touch-icon" href="./images/cloudycode-light.png" />
+    <link rel="apple-touch-icon" href="./images/icon-192.png" />
 
     <!-- Critical CSS Inline -->
     <style>
@@ -59,7 +56,7 @@
     <link rel="preload" href="./images/cloudycode-light.webp" as="image" />
 
     <!-- Defer non-critical CSS -->
-    <link rel="stylesheet" href="./css/main.css?v=5.8-beta" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="./css/main.css?v=6.0-beta" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="./css/main.css?v=5.8-beta" /></noscript>
     
     <link rel="stylesheet" href="./css/project-modal.css?v=5.8-beta" media="print" onload="this.media='all'" />
@@ -70,6 +67,9 @@
     
     <link rel="stylesheet" href="./css/fontawesome-subset.css?v=5.2-beta" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="./css/fontawesome-subset.css?v=5.2-beta" /></noscript>
+    
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
     <!-- Particles Background -->
@@ -100,10 +100,7 @@
     <header id="page-header">
       <div class="container header-wrapper">
         <a href="https://cloudycode.dev" class="header-logo">
-          <picture>
-            <source srcset="./images/cloudycode-light.webp" type="image/webp">
-            <img class="logo-img" src="./images/cloudycode-light.png" alt="Cloudycode Logo">
-          </picture>
+          <img class="logo-img" src="./images/cloudycode-light.webp" alt="Cloudycode Logo">
         </a>
 
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -148,19 +145,13 @@
         <div class="basic-information">
           <div class="me">
             <div class="arrow">
-              <picture>
-                <source srcset="./images/arrow.webp" type="image/webp">
-                <img src="./images/arrow.png" alt="Decorative arrow pointing to greeting" class="arrow-image" loading="lazy">
-              </picture>
+              <img src="./images/arrow.webp" alt="Decorative arrow pointing to greeting" class="arrow-image" loading="lazy">
               <div class="greeting">
                 Hello! I'm <span class="purple-text-light">Ahmed Belal</span>
               </div>
             </div>
             <div class="avatar">
-              <picture>
-                <source srcset="./images/avatar.webp" type="image/webp">
-                <img class="avatar-image" src="./images/avatar.png" alt="Ahmed Belal - DevOps Engineer" onerror="this.style.display='none'">
-              </picture>
+              <img class="avatar-image" src="./images/avatar.webp" alt="Ahmed Belal - DevOps Engineer" onerror="this.style.display='none'">
             </div>
           </div>
           <div class="quote">
@@ -175,41 +166,46 @@
           </div>
         </div>
 
-        <div id="about" class="objective">
-          With over <strong>12+ years</strong> of experience, from managing <strong>enterprise data centers</strong> to building <strong>cloud platforms</strong>, my journey has always been driven by a passion for <strong>automation</strong>. I constantly built <strong>scripts and tools</strong> to eliminate manual work and solve real problems. That's when I discovered my true passion in <strong>DevOps & Cloud</strong>, where <strong>infrastructure meets code</strong>, and where I now build <strong>automated, scalable systems</strong> that just work.
-        </div>
-        <div class="scroll-indicator">
-          <div class="scroll-arrow"></div>
-        </div>
-
-        <div class="stats-big-numbers fade-in-section">
-          <div class="stat-big">
-            <div class="stat-big__icon"><i class="fas fa-calendar-alt"></i></div>
-            <div class="stat-big__number">12+</div>
-            <div class="stat-big__label">Years Building<br>Infrastructure</div>
-          </div>
-          <div class="stat-big">
-            <div class="stat-big__icon"><i class="fas fa-shield-alt"></i></div>
-            <div class="stat-big__number">99.9%</div>
-            <div class="stat-big__label">System Uptime<br>Guaranteed</div>
-          </div>
-          <div class="stat-big">
-            <div class="stat-big__icon"><i class="fas fa-rocket"></i></div>
-            <div class="stat-big__number">+30%</div>
-            <div class="stat-big__label">Performance<br>Improvement</div>
-          </div>
-          <div class="stat-big">
-            <div class="stat-big__icon"><i class="fas fa-piggy-bank"></i></div>
-            <div class="stat-big__number">-20%</div>
-            <div class="stat-big__label">Cost Reduction<br>Achieved</div>
-          </div>
-        </div>
-
         <div class="lab-note fade-in-section">
-          <i class="fas fa-quote-left"></i>
           <i class="fas fa-flask lab-flask"></i>
-          <p><span class="domain-highlight">cloudycode.dev</span> is my personal lab domain where I experiment, build, and share all my DevOps & Cloud demo projects.</p>
-          <i class="fas fa-quote-right"></i>
+          <p><span class="domain-highlight">CloudyCode.dev</span> is my personal playground for all things DevOps and Cloud. a space where I test ideas, build demos, and share what I learn.</p>
+        </div>
+
+        <div class="scroll-indicator">
+          <lottie-player src="./scroll-animation.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+        </div>
+
+        <div id="about" class="about-header fade-in-section">
+          <span class="section-badge">About Me</span>
+        </div>
+        <div class="about-section fade-in-section">
+          <div class="about-content">
+            <h2>Building the future of infrastructure</h2>
+            <p>With over <span class="highlight">12+ years of experience</span>, from managing <span class="highlight">enterprise data centers</span> to building <span class="highlight">cloud platforms</span>, my journey has always been driven by a passion for <span class="highlight">automation</span>.</p>
+            <p style="margin-top: 1.2rem;">I constantly built <span class="highlight">scripts and tools</span> to eliminate manual work and solve real problems. That's when I discovered my true passion in <span class="highlight">DevOps & Cloud</span>, where <span class="highlight">infrastructure meets code</span>, and where I now build <span class="highlight">automated, scalable systems</span> that just work.</p>
+          </div>
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="about-stat-icon"><i class="fas fa-calendar-alt"></i></div>
+              <div class="about-stat-number">12+</div>
+              <div class="about-stat-label">Years Building<br>Infrastructure</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="about-stat-number">99.9%</div>
+              <div class="about-stat-label">System Uptime<br>Guaranteed</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-icon"><i class="fas fa-rocket"></i></div>
+              <div class="about-stat-number">+30%</div>
+              <div class="about-stat-label">Performance<br>Improvement</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-icon"><i class="fas fa-piggy-bank"></i></div>
+              <div class="about-stat-number">-20%</div>
+              <div class="about-stat-label">Cost Reduction<br>Achieved</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -218,8 +214,8 @@
           <h1 class="skills-heading">Here's what I do</h1>
         </div>
         <div class="what-i-do-content">
-          <div class="what-i-do-image">
-            <img loading="lazy" src="./images/cloud02.svg?v=5.6-beta" alt="Cloud infrastructure with AWS, Azure, and Kubernetes services illustration" />
+          <div class="what-i-do-image" style="display: flex; justify-content: flex-start;">
+            <lottie-player src="./cloud-animation.json" background="transparent" speed="1" style="width: 100%; max-width: 500px; transform: scaleX(-1);" loop autoplay></lottie-player>
           </div>
           <div class="what-i-do-text">
             <h2 class="skills-subheading">DevOps and Cloud Stack</h2>
@@ -274,8 +270,8 @@
 
       <section class="container what-i-do onprem-section fade-in-section" data-aos="fade-up" data-aos-duration="800">
         <div class="what-i-do-content what-i-do-content-reverse">
-          <div class="what-i-do-image what-i-do-image-onprem">
-            <img loading="lazy" src="./images/onprem.svg?v=5.6-beta" alt="On-premise data center with VMware, storage, and networking infrastructure" />
+          <div class="what-i-do-image what-i-do-image-onprem" style="display: flex; justify-content: flex-end;">
+            <lottie-player src="./cloud-computing.json" background="transparent" speed="1" style="width: 100%; max-width: 500px; transform: scaleX(-1);" loop autoplay></lottie-player>
           </div>
           <div class="what-i-do-text what-i-do-text-onprem">
             <h2 class="skills-subheading">Traditional Infrastructure Stack</h2>
@@ -464,62 +460,62 @@
         </div>
         <div class="certifications-scroll">
           <div class="certifications-track">
-            <div class="cert-badge" onclick="openCertModal('AWS Certified DevOps Engineer - Professional', 'Advanced certification demonstrating expertise in provisioning, operating, and managing distributed systems on AWS.', 'Professional', 'Oct 2025', 'fab fa-aws')">
+            <div class="cert-badge" data-cert-title="AWS Certified DevOps Engineer - Professional" data-cert-desc="Advanced certification demonstrating expertise in provisioning, operating, and managing distributed systems on AWS." data-cert-level="Professional" data-cert-year="Oct 2025" data-cert-icon="fab fa-aws">
               <i class="fab fa-aws"></i>
               <span>AWS DevOps</span>
               <div class="cert-level">Professional</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('Microsoft Azure Solutions Architect Expert', 'Expert-level certification for designing cloud and hybrid solutions on Microsoft Azure platform.', 'Expert', 'Jan 2024', 'fab fa-microsoft')">
+            <div class="cert-badge" data-cert-title="Microsoft Azure Solutions Architect Expert" data-cert-desc="Expert-level certification for designing cloud and hybrid solutions on Microsoft Azure platform." data-cert-level="Expert" data-cert-year="Jan 2024" data-cert-icon="fab fa-microsoft">
               <i class="fab fa-microsoft"></i>
               <span>Azure Architect</span>
               <div class="cert-level">Expert</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('Microsoft Azure Administrator Associate', 'Associate-level certification for implementing, managing, and monitoring Azure environments.', 'Associate', 'Jan 2024', 'fab fa-microsoft')">
+            <div class="cert-badge" data-cert-title="Microsoft Azure Administrator Associate" data-cert-desc="Associate-level certification for implementing, managing, and monitoring Azure environments." data-cert-level="Associate" data-cert-year="Jan 2024" data-cert-icon="fab fa-microsoft">
               <i class="fab fa-microsoft"></i>
               <span>Azure Admin</span>
               <div class="cert-level">Associate</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('Oracle Cloud Infrastructure 2023 Certified Architect', 'Professional certification for designing and implementing OCI solutions and architectures.', 'Professional', 'Jul 2023', 'fas fa-cloud')">
+            <div class="cert-badge" data-cert-title="Oracle Cloud Infrastructure 2023 Certified Architect" data-cert-desc="Professional certification for designing and implementing OCI solutions and architectures." data-cert-level="Professional" data-cert-year="Jul 2023" data-cert-icon="fas fa-cloud">
               <i class="fas fa-cloud"></i>
               <span>Oracle Cloud</span>
               <div class="cert-level">Professional</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('VMware Certified Professional - Network Virtualization (VCP-NV 2023)', 'Professional certification for VMware NSX network virtualization and security.', 'Professional', 'Feb 2023', 'fas fa-server')">
+            <div class="cert-badge" data-cert-title="VMware Certified Professional - Network Virtualization (VCP-NV 2023)" data-cert-desc="Professional certification for VMware NSX network virtualization and security." data-cert-level="Professional" data-cert-year="Feb 2023" data-cert-icon="fas fa-server">
               <i class="fas fa-server"></i>
               <span>VMware VCP-NV</span>
               <div class="cert-level">Professional</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('Nutanix Certified Master 5 - Multicloud Infrastructure (NCM-MCI5)', 'Master-level certification for Nutanix hyperconverged infrastructure solutions.', 'Master', 'Nov 2022', 'fas fa-cube')">
+            <div class="cert-badge" data-cert-title="Nutanix Certified Master 5 - Multicloud Infrastructure (NCM-MCI5)" data-cert-desc="Master-level certification for Nutanix hyperconverged infrastructure solutions." data-cert-level="Master" data-cert-year="Nov 2022" data-cert-icon="fas fa-cube">
               <i class="fas fa-cube"></i>
               <span>Nutanix NCM</span>
               <div class="cert-level">Master</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('Red Hat Certified Specialist in Ansible Automation', 'Specialist certification for automation using Ansible and configuration management.', 'Specialist', 'Feb 2022', 'fab fa-redhat')">
+            <div class="cert-badge" data-cert-title="Red Hat Certified Specialist in Ansible Automation" data-cert-desc="Specialist certification for automation using Ansible and configuration management." data-cert-level="Specialist" data-cert-year="Feb 2022" data-cert-icon="fab fa-redhat">
               <i class="fab fa-redhat"></i>
               <span>Ansible</span>
               <div class="cert-level">Specialist</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('CCNP Data Center', 'Professional-level certification for data center networking and infrastructure.', 'Professional', 'Jan 2021', 'fas fa-network-wired')">
+            <div class="cert-badge" data-cert-title="CCNP Data Center" data-cert-desc="Professional-level certification for data center networking and infrastructure." data-cert-level="Professional" data-cert-year="Jan 2021" data-cert-icon="fas fa-network-wired">
               <i class="fas fa-network-wired"></i>
               <span>CCNP DC</span>
               <div class="cert-level">Professional</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('Cisco Certified Specialist - Data Center Design', 'Specialist certification for designing scalable data center architectures.', 'Specialist', 'Jan 2021', 'fas fa-network-wired')">
+            <div class="cert-badge" data-cert-title="Cisco Certified Specialist - Data Center Design" data-cert-desc="Specialist certification for designing scalable data center architectures." data-cert-level="Specialist" data-cert-year="Jan 2021" data-cert-icon="fas fa-network-wired">
               <i class="fas fa-network-wired"></i>
               <span>Cisco DC Design</span>
               <div class="cert-level">Specialist</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('VMware Certified Professional - Data Center Virtualization (VCP-DCV 2020)', 'Professional certification for vSphere data center virtualization.', 'Professional', 'Oct 2020', 'fas fa-server')">
+            <div class="cert-badge" data-cert-title="VMware Certified Professional - Data Center Virtualization (VCP-DCV 2020)" data-cert-desc="Professional certification for vSphere data center virtualization." data-cert-level="Professional" data-cert-year="Oct 2020" data-cert-icon="fas fa-server">
               <i class="fas fa-server"></i>
               <span>VMware VCP-DCV</span>
               <div class="cert-level">Professional</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('ITIL Foundation Certificate in IT Service Management', 'Foundation certification for IT service management best practices.', 'Foundation', 'Oct 2020', 'fas fa-certificate')">
+            <div class="cert-badge" data-cert-title="ITIL Foundation Certificate in IT Service Management" data-cert-desc="Foundation certification for IT service management best practices." data-cert-level="Foundation" data-cert-year="Oct 2020" data-cert-icon="fas fa-certificate">
               <i class="fas fa-certificate"></i>
               <span>ITIL</span>
               <div class="cert-level">Foundation</div>
             </div>
-            <div class="cert-badge" onclick="openCertModal('Red Hat Certified Engineer (RHCE)', 'Professional certification for advanced Red Hat Enterprise Linux system administration.', 'Engineer', 'Sep 2016', 'fab fa-redhat')">
+            <div class="cert-badge" data-cert-title="Red Hat Certified Engineer (RHCE)" data-cert-desc="Professional certification for advanced Red Hat Enterprise Linux system administration." data-cert-level="Engineer" data-cert-year="Sep 2016" data-cert-icon="fab fa-redhat">
               <i class="fab fa-redhat"></i>
               <span>RHCE</span>
               <div class="cert-level">Engineer</div>
@@ -744,10 +740,7 @@
       <div class="container footer-wrapper">
         <div class="footer-top">
           <div class="footer-brand">
-            <picture>
-              <source srcset="./images/cloudycode-light.webp" type="image/webp">
-              <img loading="lazy" src="./images/cloudycode-light.png" alt="Cloudycode Logo" class="footer-logo">
-            </picture>
+            <img loading="lazy" src="./images/cloudycode-light.webp" alt="Cloudycode Logo" class="footer-logo">
             <p class="footer-desc">DevOps & Cloud Engineer specializing in building automated, scalable infrastructure solutions.</p>
             <div class="footer-social" role="list" aria-label="Footer social media links">
               <a href="https://github.com/engabelal" target="_blank" rel="noopener" class="footer-social-link" aria-label="GitHub profile" role="listitem">
@@ -808,9 +801,9 @@
     </button>
 
     <!-- Project Modal -->
-    <div class="cert-modal" id="projectModal" onclick="closeProjectModal(event)" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle" aria-hidden="true">
-      <div class="cert-modal-content project-modal-content" onclick="event.stopPropagation()">
-        <button class="cert-modal-close project-modal-close" onclick="closeProjectModal()">&times;</button>
+    <div class="cert-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle" aria-hidden="true">
+      <div class="cert-modal-content project-modal-content">
+        <button class="cert-modal-close project-modal-close">&times;</button>
         <i class="cert-modal-icon" id="projectModalIcon"></i>
         <h3 class="cert-modal-title" id="projectModalTitle"></h3>
         
@@ -841,9 +834,9 @@
     </div>
 
     <!-- Certification Modal -->
-    <div class="cert-modal" id="certModal" onclick="closeCertModal(event)" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" aria-hidden="true">
-      <div class="cert-modal-content" onclick="event.stopPropagation()">
-        <button class="cert-modal-close" onclick="closeCertModal()">&times;</button>
+    <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle" aria-hidden="true">
+      <div class="cert-modal-content">
+        <button class="cert-modal-close">&times;</button>
         <i class="cert-modal-icon" id="certModalIcon"></i>
         <h3 class="cert-modal-title" id="certModalTitle"></h3>
         <p class="cert-modal-desc" id="certModalDesc"></p>

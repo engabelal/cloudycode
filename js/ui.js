@@ -72,7 +72,36 @@ export function initScrollProgress() {
 
 // Certification Modal
 export function initCertModal() {
-  window.openCertModal = function(title, desc, level, year, icon) {
+  // Event delegation for cert badges
+  document.addEventListener('click', (e) => {
+    const certBadge = e.target.closest('.cert-badge');
+    if (certBadge) {
+      openCertModal(
+        certBadge.dataset.certTitle,
+        certBadge.dataset.certDesc,
+        certBadge.dataset.certLevel,
+        certBadge.dataset.certYear,
+        certBadge.dataset.certIcon
+      );
+    }
+  });
+  
+  // Close modal handlers
+  const certModal = document.getElementById('certModal');
+  if (certModal) {
+    certModal.addEventListener('click', (e) => {
+      if (e.target.id === 'certModal') {
+        closeCertModal();
+      }
+    });
+    
+    const closeBtn = certModal.querySelector('.cert-modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeCertModal);
+    }
+  }
+  
+  function openCertModal(title, desc, level, year, icon) {
     lastFocusedElement = document.activeElement;
     
     const modal = document.getElementById('certModal');
@@ -90,21 +119,23 @@ export function initCertModal() {
       const closeBtn = modal.querySelector('.cert-modal-close');
       if (closeBtn) closeBtn.focus();
     }, 100);
-  };
+  }
 
-  window.closeCertModal = function(event) {
-    if (!event || event.target.id === 'certModal') {
-      const modal = document.getElementById('certModal');
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      
-      // Return focus to trigger element
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
-        lastFocusedElement = null;
-      }
+  function closeCertModal() {
+    const modal = document.getElementById('certModal');
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    
+    // Return focus to trigger element
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+      lastFocusedElement = null;
     }
-  };
+  }
+  
+  // Expose for backward compatibility
+  window.openCertModal = openCertModal;
+  window.closeCertModal = closeCertModal;
 }
 
 // Sticky CTA Mobile
