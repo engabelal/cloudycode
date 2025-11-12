@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header Designs - CloudyCode</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #11071f;
+      color: #fff;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      padding: 2rem;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 { text-align: center; margin-bottom: 4rem; color: #a362ff; font-size: 3rem; }
+    .design-wrapper {
+      margin-bottom: 6rem;
+      border: 2px solid rgba(163, 98, 255, 0.2);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .design-label {
+      background: rgba(163, 98, 255, 0.1);
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #a362ff;
+    }
+    .header-demo {
+      background: #11071f;
+      padding: 2rem 3rem;
+    }
+    .logo { font-size: 2rem; font-weight: 700; color: #a362ff; text-decoration: none; }
+    .nav { display: flex; gap: 3rem; list-style: none; }
+    .nav a { color: #fff; text-decoration: none; font-size: 1.6rem; transition: color 0.3s; }
+    .nav a:hover { color: #a362ff; }
+    .cta {
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #a362ff 0%, #00d4ff 100%);
+      border: none;
+      border-radius: 0.8rem;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* Design 1: Classic Centered */
+    .design-1 { display: flex; justify-content: space-between; align-items: center; }
+    .design-1 .nav { margin: 0 auto; }
+
+    /* Design 2: Minimal Left */
+    .design-2 { display: flex; justify-content: space-between; align-items: center; }
+
+    /* Design 3: Split with Border */
+    .design-3 {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 3rem;
+      border-bottom: 1px solid rgba(163, 98, 255, 0.2);
+      padding-bottom: 2rem;
+    }
+
+    /* Design 4: Floating Glass */
+    .design-4 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(163, 98, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(163, 98, 255, 0.2);
+      border-radius: 2rem;
+      padding: 1.5rem 3rem;
+    }
+
+    /* Design 5: Compact Top */
+    .design-5 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+    }
+    .design-5 .logo { font-size: 1.8rem; }
+    .design-5 .nav { gap: 2rem; }
+    .design-5 .nav a { font-size: 1.4rem; }
+
+    /* Design 6: Bold with Glow */
+    .design-6 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(163, 98, 255, 0.3);
+      border-radius: 1rem;
+      padding: 2rem 3rem;
+    }
+    .design-6 .logo { text-shadow: 0 0 20px rgba(163, 98, 255, 0.8); }
+
+    /* Design 7: Underline Nav */
+    .design-7 { display: flex; justify-content: space-between; align-items: center; }
+    .design-7 .nav a {
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .design-7 .nav a:hover { border-bottom-color: #a362ff; }
+
+    /* Design 8: Pill Nav */
+    .design-8 { display: flex; justify-content: space-between; align-items: center; }
+    .design-8 .nav a {
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      background: rgba(163, 98, 255, 0.1);
+      transition: background 0.3s;
+    }
+    .design-8 .nav a:hover { background: rgba(163, 98, 255, 0.2); }
+
+    /* Design 9: Gradient Border */
+    .design-9 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 2rem 3rem;
+    }
+    .design-9::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #a362ff, #00d4ff, transparent);
+    }
+
+    /* Design 10: Sidebar Style */
+    .design-10 {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 3rem;
+      border-right: 3px solid rgba(163, 98, 255, 0.3);
+    }
+    .design-10 .nav { flex-direction: column; gap: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Header Design Options</h1>
+
+    <!-- Design 1 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 1: Classic Centered</div>
+      <div class="header-demo design-1">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Design 2 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 2: Minimal Left Aligned</div>
+      <div class="header-demo design-2">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Design 3 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 3: Grid with Bottom Border</div>
+      <div class="header-demo design-3">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Design 4 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 4: Floating Glass Effect</div>
+      <div class="header-demo">
+        <div class="design-4">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 5 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 5: Compact & Tight</div>
+      <div class="header-demo design-5">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Design 6 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 6: Bold with Purple Glow</div>
+      <div class="header-demo design-6">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Design 7 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 7: Underline Hover Effect</div>
+      <div class="header-demo design-7">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Design 8 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 8: Pill-Shaped Nav Items</div>
+      <div class="header-demo design-8">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Design 9 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 9: Gradient Bottom Border</div>
+      <div class="header-demo design-9">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Design 10 -->
+    <div class="design-wrapper">
+      <div class="design-label">Design 10: Vertical Sidebar Style</div>
+      <div class="header-demo design-10">
+        <a href="#" class="logo">CloudyCode</a>
+        <nav>
+          <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Certifications</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Get in Touch</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
