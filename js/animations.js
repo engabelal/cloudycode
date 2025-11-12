@@ -52,6 +52,12 @@ export function initParticles() {
     return;
   }
   
+  // Respect prefers-reduced-motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    console.log('Particles disabled due to prefers-reduced-motion');
+    return;
+  }
+  
   return safeExecute(() => {
 
   particlesJS('particles-js', {
