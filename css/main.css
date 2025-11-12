@@ -10,6 +10,18 @@
   --purple-tag-project: #9857d3;
   --background: #11071f;
 
+  /* Primary */
+  --purple-primary: #7127ba;
+  
+  /* Accent Colors */
+  --accent-blue: #00d4ff;
+  --accent-green: #00ff88;
+  --accent-orange: #ff6b35;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #7127ba 0%, #a362ff 100%);
+  --gradient-accent: linear-gradient(135deg, #a362ff 0%, #00d4ff 100%);
+
   /* Fonts */
   --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
   --font-preahvihear: "Preahvihear", sans-serif;
@@ -505,7 +517,7 @@ main#main {
   inset: 0;
   border-radius: 0.8rem;
   padding: 2px;
-  background: linear-gradient(135deg, var(--purple-light), #00d4ff);
+  background: var(--gradient-accent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -1148,7 +1160,7 @@ main#main .introduction .objective::after {
 .stat-big__number {
   font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--purple-light) 0%, #00d4ff 100%);
+  background: var(--gradient-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2184,7 +2196,7 @@ footer#page-footer {
   align-items: center;
   gap: 0.8rem;
   padding: 1.2rem 2.5rem;
-  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+  background: var(--gradient-primary);
   color: var(--white);
   text-decoration: none;
   border-radius: 3rem;
@@ -2353,7 +2365,7 @@ footer#page-footer {
   color: var(--white);
   white-space: nowrap;
   font-family: var(--font-plus-jakarta-sans);
-  background: linear-gradient(135deg, var(--purple-light) 0%, #00d4ff 100%);
+  background: var(--gradient-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2765,7 +2777,7 @@ footer#page-footer {
   align-items: center;
   gap: 0.8rem;
   color: var(--white);
-  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+  background: var(--gradient-primary);
   padding: 0.8rem 1.8rem;
   border-radius: 0.6rem;
   font-size: 1.3rem;
