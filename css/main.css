@@ -3642,3 +3642,169 @@ body {
     padding: 1rem 2rem;
   }
 }
+
+/* PWA Install Prompt */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10002;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.pwa-install-prompt.show {
+  transform: translateY(0);
+}
+
+.pwa-prompt-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.pwa-prompt-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2.5rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.pwa-prompt-close:hover {
+  color: var(--white);
+}
+
+.pwa-prompt-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.pwa-prompt-content h3 {
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  font-family: var(--font-plus-jakarta-sans);
+}
+
+.pwa-prompt-content p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.pwa-prompt-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.pwa-btn {
+  padding: 1rem 2.5rem;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.pwa-btn-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(163, 98, 255, 0.3);
+}
+
+.pwa-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(163, 98, 255, 0.5);
+}
+
+.pwa-btn-secondary {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pwa-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* SW Update Notification */
+.sw-update-notification {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(163, 98, 255, 0.95);
+  color: var(--white);
+  padding: 1.2rem 2rem;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
+  transition: top 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sw-update-notification.show {
+  top: 2rem;
+}
+
+.sw-update-btn {
+  background: var(--white);
+  color: var(--purple);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sw-update-btn:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .pwa-prompt-content {
+    padding: 1.5rem;
+  }
+  
+  .pwa-prompt-icon {
+    font-size: 3rem;
+  }
+  
+  .pwa-prompt-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .pwa-prompt-content p {
+    font-size: 1.3rem;
+  }
+  
+  .pwa-prompt-actions {
+    flex-direction: column;
+  }
+  
+  .pwa-btn {
+    width: 100%;
+  }
+}

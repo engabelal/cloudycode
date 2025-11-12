@@ -22,6 +22,7 @@ import {
   initImageErrorHandlers,
   initNetworkMonitor
 } from './error-handler.js';
+import { initPWA, initSWUpdateNotification } from './pwa.js';
 
 // Scroll Animation Observer
 const observer = createObserver((entries) => {
@@ -35,6 +36,10 @@ const observer = createObserver((entries) => {
 // Initialize error handling first
 initGlobalErrorHandler();
 initNetworkMonitor();
+
+// Initialize PWA features
+initPWA();
+initSWUpdateNotification();
 
 // Force scroll to top on page load
 forceScrollReset();
