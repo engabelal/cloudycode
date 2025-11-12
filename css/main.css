@@ -699,11 +699,11 @@ main#main {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 22px;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 11px 8px;
+  width: 20px;
+  height: 16px;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 6px 4px;
   background: transparent;
   border: none;
   cursor: pointer;
