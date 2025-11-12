@@ -234,6 +234,10 @@ function openProjectModal(project) {
       return;
     }
     
+    // Update URL hash for deep linking
+    const projectSlug = project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    window.history.pushState(null, '', `#project-${projectSlug}`);
+    
     const iconElement = document.getElementById('projectModalIcon');
     if (iconElement) {
       iconElement.className = `cert-modal-icon ${project.icon}`;
@@ -282,6 +286,9 @@ function closeProjectModal() {
   modal.classList.remove('active');
   modal.setAttribute('aria-hidden', 'true');
   
+  // Remove hash from URL
+  window.history.pushState(null, '', window.location.pathname);
+  
   // Return focus
   if (lastProjectFocusedElement) {
     lastProjectFocusedElement.focus();
@@ -307,6 +314,18 @@ try {
   
   window.openProjectModal = openProjectModal;
   window.closeProjectModal = closeProjectModal;
+  
+  // Handle deep linking on page load
+  const hash = window.location.hash;
+  if (hash.startsWith('#project-')) {
+    const projectSlug = hash.replace('#project-', '');
+    const project = allProjects.find(p => 
+      p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') === projectSlug
+    );
+    if (project) {
+      setTimeout(() => openProjectModal(project), 500);
+    }
+  }
   
   // Initial render
   renderProjects();
