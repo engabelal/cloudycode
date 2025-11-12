@@ -529,8 +529,8 @@ main#main {
   width: 200px;
   height: auto;
   transition: transform 0.3s ease;
-  filter: brightness(1.4) contrast(1.2) saturate(1.1)
-    drop-shadow(0 4px 12px rgba(163, 98, 255, 0.3));
+  filter: brightness(1.1) contrast(1.1) saturate(1.05)
+    drop-shadow(0 4px 12px rgba(163, 98, 255, 0.2));
 }
 
 #page-header .header-wrapper .header-logo .logo-img:hover {
