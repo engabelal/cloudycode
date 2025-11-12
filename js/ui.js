@@ -29,6 +29,13 @@ export function initMobileMenu() {
 
   if (!mobileMenuToggle) return;
 
+  const closeMenu = () => {
+    mobileMenuToggle.classList.remove('active');
+    navbar.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+  };
+
   mobileMenuToggle.addEventListener('click', () => {
     const isActive = mobileMenuToggle.classList.toggle('active');
     navbar.classList.toggle('active');
@@ -36,23 +43,30 @@ export function initMobileMenu() {
     mobileMenuToggle.setAttribute('aria-expanded', isActive);
   });
 
+  // Swipe gesture to close menu
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  navbar.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  
+  navbar.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX - touchStartX > 100) { // Swipe right > 100px
+      closeMenu();
+    }
+  }, { passive: true });
+
   // Close menu when clicking nav items
   navItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      mobileMenuToggle.classList.remove('active');
-      navbar.classList.remove('active');
-      document.body.classList.remove('menu-open');
-      mobileMenuToggle.setAttribute('aria-expanded', 'false');
-    });
+    item.addEventListener('click', closeMenu);
   });
 
   // Close menu on escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navbar.classList.contains('active')) {
-      mobileMenuToggle.classList.remove('active');
-      navbar.classList.remove('active');
-      document.body.classList.remove('menu-open');
-      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      closeMenu();
     }
   });
 }
