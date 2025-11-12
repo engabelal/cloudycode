@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Header Designs - CloudyCode</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #11071f;
+      color: #fff;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      padding: 2rem;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 { text-align: center; margin-bottom: 2rem; color: #a362ff; font-size: 3.5rem; }
+    .subtitle { text-align: center; color: #888; margin-bottom: 4rem; font-size: 1.6rem; }
+    .design-wrapper {
+      margin-bottom: 6rem;
+      border: 2px solid rgba(163, 98, 255, 0.3);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .design-wrapper:hover { transform: translateY(-5px); }
+    .design-label {
+      background: linear-gradient(135deg, rgba(163, 98, 255, 0.2), rgba(0, 212, 255, 0.1));
+      padding: 1.5rem 2rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #a362ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .design-tag { font-size: 1.2rem; background: rgba(0, 212, 255, 0.2); padding: 0.5rem 1rem; border-radius: 2rem; color: #00d4ff; }
+    .header-demo { background: #11071f; padding: 2rem 3rem; }
+    .logo { font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, #a362ff, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+    .nav { display: flex; gap: 3rem; list-style: none; align-items: center; }
+    .nav a { color: #fff; text-decoration: none; font-size: 1.5rem; transition: all 0.3s; position: relative; }
+    .cta {
+      padding: 1.2rem 2.5rem;
+      background: linear-gradient(135deg, #a362ff 0%, #00d4ff 100%);
+      border: none;
+      border-radius: 0.8rem;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(163, 98, 255, 0.3);
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(163, 98, 255, 0.5); }
+
+    /* Design 1: Neon Glow */
+    .design-1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(17, 7, 31, 0.8);
+      border: 1px solid rgba(163, 98, 255, 0.5);
+      border-radius: 2rem;
+      padding: 1.5rem 3rem;
+      box-shadow: 0 0 30px rgba(163, 98, 255, 0.4), inset 0 0 20px rgba(163, 98, 255, 0.1);
+    }
+    .design-1 .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #a362ff, #00d4ff);
+      transition: width 0.3s;
+    }
+    .design-1 .nav a:hover::after { width: 100%; }
+    .design-1 .nav a:hover { color: #a362ff; }
+
+    /* Design 2: Floating Capsule */
+    .design-2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(163, 98, 255, 0.1), rgba(0, 212, 255, 0.05));
+      backdrop-filter: blur(20px);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      border-radius: 5rem;
+      padding: 1rem 3rem;
+      position: relative;
+    }
+    .design-2::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 5rem;
+      padding: 2px;
+      background: linear-gradient(135deg, #a362ff, #00d4ff);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    /* Design 3: Split Gradient */
+    .design-3 {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 4rem;
+      position: relative;
+      padding-bottom: 2rem;
+    }
+    .design-3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #a362ff 20%, #00d4ff 80%, transparent);
+      box-shadow: 0 0 10px rgba(163, 98, 255, 0.5);
+    }
+
+    /* Design 4: Minimal Luxury */
+    .design-4 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(163, 98, 255, 0.2);
+      padding-bottom: 2rem;
+    }
+    .design-4 .nav a {
+      padding: 0.8rem 1.8rem;
+      border-radius: 0.8rem;
+      transition: all 0.3s;
+    }
+    .design-4 .nav a:hover {
+      background: rgba(163, 98, 255, 0.15);
+      color: #a362ff;
+    }
+
+    /* Design 5: Cyber Tech */
+    .design-5 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(163, 98, 255, 0.05), transparent);
+      border-left: 4px solid #a362ff;
+      border-right: 4px solid #00d4ff;
+      padding: 2rem 3rem;
+      position: relative;
+    }
+    .design-5::before, .design-5::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #a362ff;
+    }
+    .design-5::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+    .design-5::after { bottom: 0; right: 0; border-left: none; border-top: none; border-color: #00d4ff; }
+
+    /* Design 6: Glassmorphism Pro */
+    .design-6 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 2rem;
+      padding: 2rem 3rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Design 7: Animated Dots */
+    .design-7 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .design-7 .nav a {
+      position: relative;
+      padding: 1rem 2rem;
+    }
+    .design-7 .nav a::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: #a362ff;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .design-7 .nav a:hover::before { opacity: 1; }
+    .design-7 .nav a:hover { color: #a362ff; padding-left: 2.5rem; }
+
+    /* Design 8: Dual Tone */
+    .design-8 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, rgba(163, 98, 255, 0.1) 0%, transparent 50%, rgba(0, 212, 255, 0.1) 100%);
+      border-top: 2px solid rgba(163, 98, 255, 0.3);
+      border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+      padding: 2rem 3rem;
+    }
+
+    /* Design 9: Spotlight */
+    .design-9 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 2rem 3rem;
+    }
+    .design-9::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 150px;
+      background: radial-gradient(ellipse, rgba(163, 98, 255, 0.3), transparent);
+      filter: blur(40px);
+    }
+
+    /* Design 10: Futuristic Edge */
+    .design-10 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(17, 7, 31, 0.9);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 5% 100%, 0 85%);
+      padding: 2rem 3rem 3rem;
+      border: 1px solid rgba(163, 98, 255, 0.3);
+    }
+    .design-10 .nav a {
+      padding: 0.8rem 1.5rem;
+      background: rgba(163, 98, 255, 0.1);
+      clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+      transition: all 0.3s;
+    }
+    .design-10 .nav a:hover {
+      background: rgba(163, 98, 255, 0.3);
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Creative Header Designs</h1>
+    <p class="subtitle">10 احترافية و إبداعية تصاميم</p>
+
+    <!-- Design 1 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 1: Neon Glow Effect</span>
+        <span class="design-tag">Modern</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-1">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 2 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 2: Floating Capsule</span>
+        <span class="design-tag">Premium</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-2">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 3 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 3: Split Gradient Line</span>
+        <span class="design-tag">Elegant</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-3">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 4 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 4: Minimal Luxury</span>
+        <span class="design-tag">Clean</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-4">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 5 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 5: Cyber Tech Borders</span>
+        <span class="design-tag">Futuristic</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-5">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 6 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 6: Glassmorphism Pro</span>
+        <span class="design-tag">Trendy</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-6">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 7 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 7: Animated Dots</span>
+        <span class="design-tag">Interactive</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-7">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 8 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 8: Dual Tone Gradient</span>
+        <span class="design-tag">Colorful</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-8">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 9 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 9: Spotlight Effect</span>
+        <span class="design-tag">Dramatic</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-9">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 10 -->
+    <div class="design-wrapper">
+      <div class="design-label">
+        <span>Design 10: Futuristic Edge</span>
+        <span class="design-tag">Sci-Fi</span>
+      </div>
+      <div class="header-demo">
+        <div class="design-10">
+          <a href="#" class="logo">CloudyCode</a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Skills</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Certifications</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
