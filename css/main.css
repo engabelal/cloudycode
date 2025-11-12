@@ -1035,7 +1035,27 @@ main#main .introduction .objective::before {
 }
 
 main#main .introduction .objective::after {
-  display: none;
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(163, 98, 255, 0.08) 0%, transparent 70%);
+  animation: objectiveGlow 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes objectiveGlow {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-20%, -20%);
+    opacity: 0.6;
+  }
 }
 
 .scroll-indicator {
@@ -1148,6 +1168,12 @@ main#main .introduction .objective::after {
 .stat-big {
   text-align: center;
   min-width: 140px;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.stat-big:hover {
+  transform: translateY(-5px);
 }
 
 @media screen and (max-width: 768px) {
@@ -1180,9 +1206,13 @@ main#main .introduction .objective::after {
 .stat-big__number {
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--purple-light);
+  background: linear-gradient(135deg, var(--purple-light) 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 0.3rem;
   line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(163, 98, 255, 0.3));
 }
 
 .stat-big__label {

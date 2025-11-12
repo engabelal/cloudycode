@@ -103,12 +103,13 @@ if (mobileMenuToggle) {
   });
 }
 
-// Typing Effect with Multiple Texts
+// Enhanced Typing Effect
 const typedTextSpan = document.querySelector(".typed-text");
 const texts = [
-  "Structured, stable, and effortlessly alive",
+  "Automated, resilient, and brilliantly efficient",
+  "Infrastructure as code, deployed with confidence",
   "Built for scale, designed for reliability",
-  "Automated, resilient, and brilliantly efficient"
+  "Cloud-native, container-ready, production-proven"
 ];
 let textIndex = 0;
 let charIndex = 0;
@@ -120,20 +121,20 @@ function type() {
   if (!isDeleting && charIndex < currentText.length) {
     typedTextSpan.textContent += currentText.charAt(charIndex);
     charIndex++;
-    setTimeout(type, 70);
+    setTimeout(type, 50);
   } else if (isDeleting && charIndex > 0) {
     typedTextSpan.textContent = currentText.substring(0, charIndex - 1);
     charIndex--;
-    setTimeout(type, 30);
+    setTimeout(type, 25);
   } else if (!isDeleting && charIndex === currentText.length) {
     setTimeout(() => {
       isDeleting = true;
       type();
-    }, 2500);
+    }, 3000);
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     textIndex = (textIndex + 1) % texts.length;
-    setTimeout(type, 300);
+    setTimeout(type, 500);
   }
 }
 
