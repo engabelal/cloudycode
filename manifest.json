@@ -1,22 +1,84 @@
 {
-  "name": "Cloudycode - Ahmed Belal",
-  "short_name": "Cloudycode",
-  "description": "DevOps & Cloud Engineer Portfolio",
+  "name": "CloudyCode.dev - Ahmed Belal | DevOps & Cloud Engineer",
+  "short_name": "CloudyCode",
+  "description": "DevOps & Cloud Engineer Portfolio - Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#11071f",
   "theme_color": "#7127ba",
+  "categories": ["portfolio", "technology", "devops", "cloud"],
+  "lang": "en-US",
+  "dir": "ltr",
   "icons": [
     {
-      "src": "/images/cloudycode-light.webp",
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-512.png",
       "sizes": "512x512",
-      "type": "image/webp",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
       "src": "/images/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View DevOps & Cloud projects",
+      "url": "/#projects",
+      "icons": [
+        {
+          "src": "/images/favicon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Skills",
+      "short_name": "Skills",
+      "description": "View technical skills",
+      "url": "/#skills",
+      "icons": [
+        {
+          "src": "/images/favicon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Certifications",
+      "short_name": "Certs",
+      "description": "View certifications",
+      "url": "/#certifications",
+      "icons": [
+        {
+          "src": "/images/favicon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "mailto:eng.abelal@gmail.com",
+      "icons": [
+        {
+          "src": "/images/favicon.svg",
+          "sizes": "96x96"
+        }
+      ]
     }
   ]
 }
