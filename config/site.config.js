@@ -53,7 +53,7 @@ const siteConfig = {
   },
   
   // Version
-  version: '5.3.0',
+  version: '6.1.0',
 };
 
 // Export for use in other files

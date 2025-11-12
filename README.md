@@ -72,4 +72,4 @@ DevOps & Cloud Engineer
 
 ---
 
-**Version 5.4** | Made with ❤️ | Hosted on GitHub Pages
+**Version 6.1.0** | Made with ❤️ | Hosted on GitHub Pages

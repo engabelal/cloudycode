@@ -1,6 +1,35 @@
 // Animations Module
 import { safeExecute, isLibraryLoaded } from './error-handler.js';
 
+// Animation Constants
+const TYPING_CONFIG = {
+  TYPE_SPEED: 50,
+  DELETE_SPEED: 25,
+  PAUSE_DURATION: 3000,
+  NEXT_TEXT_DELAY: 500,
+  INITIAL_DELAY: 1500
+};
+
+const PARTICLES_CONFIG = {
+  PARTICLE_COUNT: 50,
+  DENSITY_AREA: 800,
+  MOVE_SPEED: 0.5,
+  PARTICLE_SIZE: 3,
+  OPACITY: 0.6
+};
+
+const AOS_CONFIG = {
+  DURATION: 800,
+  OFFSET: 100
+};
+
+const OBSERVER_CONFIG = {
+  THRESHOLD: 0.3,
+  ROOT_MARGIN: '0px'
+};
+
+export const IMAGE_ERROR_RECHECK_DELAY = 1000;
+
 // Typing Effect
 export function initTypingEffect() {
   return safeExecute(() => {
@@ -23,24 +52,24 @@ export function initTypingEffect() {
     if (!isDeleting && charIndex < currentText.length) {
       typedTextSpan.textContent += currentText.charAt(charIndex);
       charIndex++;
-      setTimeout(type, 50);
+      setTimeout(type, TYPING_CONFIG.TYPE_SPEED);
     } else if (isDeleting && charIndex > 0) {
       typedTextSpan.textContent = currentText.substring(0, charIndex - 1);
       charIndex--;
-      setTimeout(type, 25);
+      setTimeout(type, TYPING_CONFIG.DELETE_SPEED);
     } else if (!isDeleting && charIndex === currentText.length) {
       setTimeout(() => {
         isDeleting = true;
         type();
-      }, 3000);
+      }, TYPING_CONFIG.PAUSE_DURATION);
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       textIndex = (textIndex + 1) % texts.length;
-      setTimeout(type, 500);
+      setTimeout(type, TYPING_CONFIG.NEXT_TEXT_DELAY);
     }
   }
 
-    setTimeout(type, 1500);
+    setTimeout(type, TYPING_CONFIG.INITIAL_DELAY);
   }, null, 'Typing Effect');
 }
 
@@ -62,10 +91,10 @@ export function initParticles() {
   particlesJS('particles-js', {
     particles: {
       number: {
-        value: 50,
+        value: PARTICLES_CONFIG.PARTICLE_COUNT,
         density: {
           enable: true,
-          value_area: 800
+          value_area: PARTICLES_CONFIG.DENSITY_AREA
         }
       },
       color: {
@@ -75,11 +104,11 @@ export function initParticles() {
         type: 'circle'
       },
       opacity: {
-        value: 0.6,
+        value: PARTICLES_CONFIG.OPACITY,
         random: true
       },
       size: {
-        value: 3,
+        value: PARTICLES_CONFIG.PARTICLE_SIZE,
         random: true
       },
       line_linked: {
@@ -87,7 +116,7 @@ export function initParticles() {
       },
       move: {
         enable: true,
-        speed: 0.5,
+        speed: PARTICLES_CONFIG.MOVE_SPEED,
         direction: 'none',
         random: true,
         straight: false,
@@ -121,10 +150,10 @@ export function initAOS() {
   return safeExecute(() => {
 
   AOS.init({
-    duration: 800,
+    duration: AOS_CONFIG.DURATION,
     easing: 'ease-out',
     once: true,
-    offset: 100,
+    offset: AOS_CONFIG.OFFSET,
       disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
     });
   }, null, 'AOS');
@@ -152,7 +181,7 @@ export function initFadeInSections() {
         }
       });
     },
-    { threshold: 0.3, rootMargin: '0px' }
+    { threshold: OBSERVER_CONFIG.THRESHOLD, rootMargin: OBSERVER_CONFIG.ROOT_MARGIN }
   );
 
     fadeInSections.forEach((section) => sectionObserver.observe(section));
