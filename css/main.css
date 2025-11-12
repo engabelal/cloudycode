@@ -2605,29 +2605,64 @@ footer#page-footer {
   border-radius: 0.8rem;
   padding: 1rem 1.5rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(163, 98, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.skill-card:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .skill-card:focus,
 .skill-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px) scale(1.03);
   background: rgba(163, 98, 255, 0.12);
   border-color: var(--purple-light);
-  box-shadow: 0 5px 15px rgba(113, 39, 186, 0.2);
+  box-shadow: 0 8px 20px rgba(113, 39, 186, 0.3);
   outline: none;
-  
 }
 
 .skill-card i {
   font-size: 2rem;
   color: var(--purple-light);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card:hover i {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(163, 98, 255, 0.6));
 }
 
 .skill-card span {
   font-size: 1.3rem;
   color: var(--white);
   font-weight: 500;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover span {
+  color: var(--purple-light);
+  font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {
