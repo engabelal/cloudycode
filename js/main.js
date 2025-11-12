@@ -241,21 +241,85 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fadeInSections.forEach((section) => sectionObserver.observe(section));
 
+  // Focus Trap Helper
+  function trapFocus(element) {
+    const focusableElements = element.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    element.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusable) {
+            lastFocusable.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastFocusable) {
+            firstFocusable.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+
+    return firstFocusable;
+  }
+
+  // Store last focused element
+  let lastFocusedElement = null;
+
   // Certification Modal
   window.openCertModal = function(title, desc, level, year, icon) {
+    lastFocusedElement = document.activeElement;
+    
+    const modal = document.getElementById('certModal');
     document.getElementById('certModalTitle').textContent = title;
     document.getElementById('certModalDesc').textContent = desc;
     document.getElementById('certModalLevel').textContent = level;
     document.getElementById('certModalYear').textContent = year;
     document.getElementById('certModalIcon').className = `cert-modal-icon ${icon}`;
-    document.getElementById('certModal').classList.add('active');
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    
+    // Trap focus and focus first element
+    const firstFocusable = trapFocus(modal);
+    setTimeout(() => {
+      const closeBtn = modal.querySelector('.cert-modal-close');
+      if (closeBtn) closeBtn.focus();
+    }, 100);
   };
 
   window.closeCertModal = function(event) {
     if (!event || event.target.id === 'certModal') {
-      document.getElementById('certModal').classList.remove('active');
+      const modal = document.getElementById('certModal');
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      
+      // Return focus to trigger element
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
     }
   };
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const certModal = document.getElementById('certModal');
+      const projectModal = document.getElementById('projectModal');
+      
+      if (certModal && certModal.classList.contains('active')) {
+        closeCertModal();
+      }
+      if (projectModal && projectModal.classList.contains('active')) {
+        closeProjectModal();
+      }
+    }
+  });
 
   // Sticky CTA Mobile
   const stickyCta = document.getElementById("stickyCta");
