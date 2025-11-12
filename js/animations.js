@@ -153,7 +153,7 @@ export function initFadeInSections() {
         }
       });
     },
-    { threshold: 0.1, rootMargin: '50px' }
+    { threshold: 0.3, rootMargin: '0px' }
   );
 
     fadeInSections.forEach((section) => sectionObserver.observe(section));

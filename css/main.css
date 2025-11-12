@@ -1095,7 +1095,7 @@ main#main .introduction .position .where .icon-facebook {
   place-content: center;
 }
 
-main#main .introduction .design-7 {
+main#main .introduction .about-section {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
@@ -1106,10 +1106,76 @@ main#main .introduction .design-7 {
   position: relative;
   overflow: hidden;
   max-width: 1400px;
-  margin: 1rem auto 3rem;
+  margin: 1rem auto 0;
+}
+
+main#main .introduction .about-section.fade-in-section {
+  opacity: 0;
+  transform: perspective(1000px) rotateX(10deg) translateY(50px);
+}
+
+main#main .introduction .about-section.fade-in-section.is-visible {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) translateY(0);
+  transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+main#main .introduction .about-content h2 {
   opacity: 0;
   transform: translateY(30px);
-  animation: objectiveFadeIn 0.8s ease-out 0.6s forwards;
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+}
+
+main#main .introduction .about-section.is-visible .about-content h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+main#main .introduction .about-content p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s;
+}
+
+main#main .introduction .about-section.is-visible .about-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+main#main .introduction .about-stat {
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+}
+
+main#main .introduction .about-section.is-visible .about-stat:nth-child(1) {
+  animation: statBounceIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s forwards;
+}
+
+main#main .introduction .about-section.is-visible .about-stat:nth-child(2) {
+  animation: statBounceIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.85s forwards;
+}
+
+main#main .introduction .about-section.is-visible .about-stat:nth-child(3) {
+  animation: statBounceIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1s forwards;
+}
+
+main#main .introduction .about-section.is-visible .about-stat:nth-child(4) {
+  animation: statBounceIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.15s forwards;
+}
+
+@keyframes statBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 main#main .introduction .lab-note {
@@ -1126,7 +1192,7 @@ main#main .introduction .about-header {
   margin-bottom: 2rem;
 }
 
-main#main .introduction .design-7::before {
+main#main .introduction .about-section::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -1137,12 +1203,9 @@ main#main .introduction .design-7::before {
   border-radius: 50%;
 }
 
-main#main .introduction .design-7-content {
-  position: relative;
-  z-index: 1;
-}
 
-main#main .introduction .design-7-content h2 {
+
+main#main .introduction .about-content h2 {
   font-size: 4.5rem;
   font-weight: 700;
   margin-bottom: 24px;
@@ -1150,19 +1213,19 @@ main#main .introduction .design-7-content h2 {
   font-family: var(--font-plus-jakarta-sans);
 }
 
-main#main .introduction .design-7-content p {
+main#main .introduction .about-content p {
   font-size: 1.7rem;
   color: rgba(255,255,255,0.8);
   line-height: 1.8;
   font-family: var(--font-inter);
 }
 
-main#main .introduction .design-7-content .highlight {
+main#main .introduction .about-content .highlight {
   color: var(--purple-light);
   font-weight: 600;
 }
 
-main#main .introduction .design-7-stats {
+main#main .introduction .about-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
@@ -1170,23 +1233,23 @@ main#main .introduction .design-7-stats {
   z-index: 1;
 }
 
-main#main .introduction .design-7-stat {
+main#main .introduction .about-stat {
   text-align: center;
   transition: transform 0.3s ease;
 }
 
-main#main .introduction .design-7-stat:hover {
+main#main .introduction .about-stat:hover {
   transform: translateY(-5px);
 }
 
-main#main .introduction .design-7-stat-icon {
+main#main .introduction .about-stat-icon {
   font-size: 2.5rem;
   color: var(--purple-light);
   margin-bottom: 0.8rem;
   opacity: 0.8;
 }
 
-main#main .introduction .design-7-stat-number {
+main#main .introduction .about-stat-number {
   font-size: 3.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, #a362ff, #00d4ff);
@@ -1199,7 +1262,7 @@ main#main .introduction .design-7-stat-number {
   filter: drop-shadow(0 0 8px rgba(163, 98, 255, 0.3));
 }
 
-main#main .introduction .design-7-stat-label {
+main#main .introduction .about-stat-label {
   font-size: 1.2rem;
   color: rgba(255,255,255,0.7);
   opacity: 0.7;
@@ -1250,6 +1313,24 @@ main#main .introduction .design-7-stat-label {
   position: relative;
 }
 
+.lab-note.fade-in-section {
+  opacity: 0;
+  transform: scale(0.9) translateY(30px);
+}
+
+.lab-note.fade-in-section.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: borderDash 20s linear infinite;
+}
+
+@keyframes borderDash {
+  0% { border-color: rgba(163, 98, 255, 0.3); }
+  50% { border-color: rgba(163, 98, 255, 0.6); }
+  100% { border-color: rgba(163, 98, 255, 0.3); }
+}
+
 .lab-note::before {
   content: 'PLAYGROUND';
   position: absolute;
@@ -1260,12 +1341,34 @@ main#main .introduction .design-7-stat-label {
   font-size: 1.2rem;
   color: var(--purple-light);
   font-weight: 700;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
+}
+
+.lab-note.is-visible::before {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .lab-flask {
   font-size: 3rem;
   color: var(--purple-light);
   flex-shrink: 0;
+  opacity: 0;
+  transform: rotate(-20deg) scale(0.5);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s;
+}
+
+.lab-note.is-visible .lab-flask {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  animation: flaskFloat 3s ease-in-out infinite;
+}
+
+@keyframes flaskFloat {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-5px); }
 }
 
 .lab-note p {
@@ -1274,6 +1377,14 @@ main#main .introduction .design-7-stat-label {
   line-height: 1.6;
   font-family: var(--font-inter);
   font-style: italic;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s;
+}
+
+.lab-note.is-visible p {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .domain-highlight {
@@ -1460,23 +1571,23 @@ main#main .introduction .design-7-stat-label {
     height: auto;
   }
 
-  main#main .introduction .design-7 {
+  main#main .introduction .about-section {
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 40px 30px;
     margin-top: 3rem;
   }
 
-  main#main .introduction .design-7-content h2 {
+  main#main .introduction .about-content h2 {
     font-size: 3.2rem;
   }
 
-  main#main .introduction .design-7-content p {
+  main#main .introduction .about-content p {
     font-size: 1.55rem;
   }
 
-  main#main .introduction .design-7-stats {
-    grid-template-columns: 1fr;
+  main#main .introduction .about-stats {
+    grid-template-columns: 1fr 1fr;
   }
 
   main#main .introduction .basic-information .quote .judges-a-book {
@@ -1508,17 +1619,17 @@ main#main .introduction .design-7-stat-label {
 
 /* mobile L */
 @media screen and (max-width: 425px) {
-  main#main .introduction .design-7 {
+  main#main .introduction .about-section {
     padding: 30px 20px;
     margin-top: 3rem;
   }
 
-  main#main .introduction .design-7-content h2 {
+  main#main .introduction .about-content h2 {
     font-size: 3rem;
     text-align: center;
   }
 
-  main#main .introduction .design-7-content p {
+  main#main .introduction .about-content p {
     font-size: 1.5rem;
     text-align: center;
   }
@@ -2513,7 +2624,7 @@ footer#page-footer {
 
 /* What I Do Section */
 .what-i-do {
-  padding: 5rem 0 10rem 0;
+  padding: 0rem 0 10rem 0;
 }
 
 .what-i-do-heading {
