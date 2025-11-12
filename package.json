@@ -1,6 +1,6 @@
 {
   "name": "cloudycode-website",
-  "version": "5.6.0",
+  "version": "6.1.0",
   "description": "Ahmed Belal - DevOps & Cloud Engineer Portfolio",
   "author": "Ahmed Belal <eng.abelal@gmail.com>",
   "license": "MIT",
@@ -17,5 +17,13 @@
     "terraform",
     "kubernetes",
     "portfolio"
+  ],
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "not IE 11",
+    "not dead"
   ]
 }

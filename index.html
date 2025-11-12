@@ -58,17 +58,17 @@
     <link rel="preload" href="./images/cloudycode-light.webp" as="image" />
 
     <!-- Defer non-critical CSS -->
-    <link rel="stylesheet" href="./css/main.min.css?v=6.1-beta" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="./css/main.min.css?v=6.1-beta" /></noscript>
+    <link rel="stylesheet" href="./css/main.min.css?v=6.1.0" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="./css/main.min.css?v=6.1.0" /></noscript>
     
-    <link rel="stylesheet" href="./css/project-modal.css?v=5.8-beta" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="./css/project-modal.css?v=5.8-beta" /></noscript>
+    <link rel="stylesheet" href="./css/project-modal.css?v=6.1.0" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="./css/project-modal.css?v=6.1.0" /></noscript>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous" />
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous" /></noscript>
     
-    <link rel="stylesheet" href="./css/fontawesome-subset.css?v=5.2-beta" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="./css/fontawesome-subset.css?v=5.2-beta" /></noscript>
+    <link rel="stylesheet" href="./css/fontawesome-subset.css?v=6.1.0" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="./css/fontawesome-subset.css?v=6.1.0" /></noscript>
     
     <!-- Lottie Player -->
     <script src="./js/lottie-player.js"></script>
@@ -549,191 +549,6 @@
         </div>
       </section>
 
-      <section class="container work-experience" style="display:none;">
-        <article class="project-card" data-category="cicd">
-            <div class="project-card__header">
-              <div class="project-card__icon">
-                <i class="fab fa-node-js"></i>
-              </div>
-              <span class="project-card__tag">CI/CD</span>
-            </div>
-            <h3 class="project-card__title">Node.js CI/CD Pipeline</h3>
-            <p class="project-card__description">
-              GitHub Actions and Terraform pipeline delivering sub-15-second
-              deployments, automated testing, and zero-downtime releases on AWS
-              EC2.
-            </p>
-            <div class="project-card__tech">
-              <span>GitHub Actions</span>
-              <span>Terraform</span>
-              <span>AWS EC2</span>
-            </div>
-            <a href="https://github.com/engabelal/simple-nodejs-ec2-cicd" target="_blank" rel="noopener" class="project-card__link">
-              View Project
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-              </svg>
-            </a>
-          </article>
-
-          <article class="project-card" data-category="serverless">
-            <div class="project-card__header">
-              <div class="project-card__icon">
-                <i class="fab fa-aws"></i>
-              </div>
-              <span class="project-card__tag">Serverless</span>
-            </div>
-            <h3 class="project-card__title">AWS Serverless Event Platform</h3>
-            <p class="project-card__description">
-              EventBridge, Lambda, and DynamoDB stack codified as IaC—with
-              CloudFront acceleration and automated environment provisioning.
-            </p>
-            <div class="project-card__tech">
-              <span>Lambda</span>
-              <span>API Gateway</span>
-              <span>DynamoDB</span>
-            </div>
-            <a href="https://github.com/engabelal/iac-aws-serverless-event" target="_blank" rel="noopener" class="project-card__link">
-              View Project
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-              </svg>
-            </a>
-          </article>
-
-          <article class="project-card" data-category="infrastructure">
-            <div class="project-card__header">
-              <div class="project-card__icon">
-                <i class="fas fa-server"></i>
-              </div>
-              <span class="project-card__tag">Infrastructure</span>
-            </div>
-            <h3 class="project-card__title">Auto-Scaling Web Infrastructure</h3>
-            <p class="project-card__description">
-              Terraform-built AWS blueprint combining EC2 Auto Scaling, Network
-              Load Balancers, and multi-AZ failover for resilient web tiers.
-            </p>
-            <div class="project-card__tech">
-              <span>Terraform</span>
-              <span>Auto Scaling</span>
-              <span>NLB</span>
-            </div>
-            <a href="https://github.com/engabelal/simple-webapp-ec2-nlb-asg" target="_blank" rel="noopener" class="project-card__link">
-              View Project
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-              </svg>
-            </a>
-          </article>
-
-          <article class="project-card" data-category="automation">
-            <div class="project-card__header">
-              <div class="project-card__icon">
-                <i class="fas fa-cogs"></i>
-              </div>
-              <span class="project-card__tag">Ansible</span>
-            </div>
-            <h3 class="project-card__title">MERN Stack Automation</h3>
-            <p class="project-card__description">
-              Idempotent Ansible playbooks provisioning MongoDB, Express, React,
-              and Node with hardened configurations and repeatable rollouts.
-            </p>
-            <div class="project-card__tech">
-              <span>Ansible</span>
-              <span>MongoDB</span>
-              <span>React</span>
-            </div>
-            <a href="https://github.com/engabelal/cm-ansible-mern-stack" target="_blank" rel="noopener" class="project-card__link">
-              View Project
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-              </svg>
-            </a>
-          </article>
-
-          <article class="project-card" data-category="infrastructure">
-            <div class="project-card__header">
-              <div class="project-card__icon">
-                <i class="fas fa-box"></i>
-              </div>
-              <span class="project-card__tag">Packer</span>
-            </div>
-            <h3 class="project-card__title">Hardened DevOps AMI</h3>
-            <p class="project-card__description">
-              Packer pipeline producing CIS-aligned Ubuntu AMIs preloaded with
-              DevOps tooling, CloudWatch telemetry, and guardrails.
-            </p>
-            <div class="project-card__tech">
-              <span>Packer</span>
-              <span>AWS AMI</span>
-              <span>Security</span>
-            </div>
-            <a href="https://github.com/engabelal/packer-aws-devops-ami" target="_blank" rel="noopener" class="project-card__link">
-              View Project
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-              </svg>
-            </a>
-          </article>
-
-          <article class="project-card" data-category="infrastructure">
-            <div class="project-card__header">
-              <div class="project-card__icon">
-                <i class="fas fa-layer-group"></i>
-              </div>
-              <span class="project-card__tag">Infrastructure</span>
-            </div>
-            <h3 class="project-card__title">Layered MERN with RDS</h3>
-            <p class="project-card__description">
-              Multi-tier Terraform architecture deploying MERN stack with RDS MySQL, VPC isolation, and production-grade networking.
-            </p>
-            <div class="project-card__tech">
-              <span>Terraform</span>
-              <span>RDS</span>
-              <span>VPC</span>
-            </div>
-            <a href="https://github.com/engabelal/terraform-layered-mern-rds" target="_blank" rel="noopener" class="project-card__link">
-              View Project
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-              </svg>
-            </a>
-          </article>
-
-          <article class="project-card" data-category="automation">
-            <div class="project-card__header">
-              <div class="project-card__icon">
-                <i class="fas fa-terminal"></i>
-              </div>
-              <span class="project-card__tag">Scripts</span>
-            </div>
-            <h3 class="project-card__title">CloudOps Scripts Kit</h3>
-            <p class="project-card__description">
-              Production-ready shell toolkit for AWS auditing, cost
-              optimisation, and day-two operations automation.
-            </p>
-            <div class="project-card__tech">
-              <span>Shell</span>
-              <span>AWS</span>
-              <span>Automation</span>
-            </div>
-            <a href="https://github.com/engabelal/abcloudops-scripts-kit" target="_blank" rel="noopener" class="project-card__link">
-              View Project
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-              </svg>
-            </a>
-          </article>
-        </div>
-        <div class="projects__cta">
-          <a href="https://github.com/engabelal/DevOps-Cloud-Portfolio" target="_blank" rel="noopener" class="cta cta--secondary">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>View All Projects on GitHub</span>
-          </a>
-        </div>
-      </section>
 
 
     </main>
@@ -782,7 +597,7 @@
             <p>&copy; 2025 Cloudycode. All rights reserved.</p>
             <p class="footer-made">Made with ❤️ by Ahmed Belal</p>
           </div>
-          <p class="footer-version">v6.1 Beta</p>
+          <p class="footer-version">v6.1.0</p>
         </div>
       </div>
     </footer>
@@ -857,9 +672,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-    <script src="./js/main.js?v=6.1-beta" type="module"></script>
-    <script src="./js/projects.js?v=6.1-beta" defer></script>
-    <script src="./js/keyboard-nav.js?v=6.1-beta" defer></script>
+    <script src="./js/main.js?v=6.1.0" type="module"></script>
+    <script src="./js/projects.js?v=6.1.0" defer></script>
+    <script src="./js/keyboard-nav.js?v=6.1.0" defer></script>
 
     <!-- Service Worker -->
     <script defer>
