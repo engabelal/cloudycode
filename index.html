@@ -22,14 +22,20 @@
     <meta property="og:title" content="CloudyCode.dev – Ahmed Belal | DevOps & Cloud Engineer" />
     <meta property="og:description" content="Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD." />
     <meta property="og:image" content="https://cloudycode.dev/images/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ahmed Belal - DevOps & Cloud Engineer Portfolio" />
     <meta property="og:site_name" content="CloudyCode.dev" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://cloudycode.dev" />
-    <meta property="twitter:title" content="CloudyCode.dev – Ahmed Belal | DevOps & Cloud Engineer" />
-    <meta property="twitter:description" content="Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD." />
-    <meta property="twitter:image" content="https://cloudycode.dev/images/og-image.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cloudycode.dev" />
+    <meta name="twitter:title" content="CloudyCode.dev – Ahmed Belal | DevOps & Cloud Engineer" />
+    <meta name="twitter:description" content="Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD." />
+    <meta name="twitter:image" content="https://cloudycode.dev/images/og-image.webp" />
+    <meta name="twitter:image:alt" content="Ahmed Belal - DevOps & Cloud Engineer Portfolio" />
+    <meta name="twitter:creator" content="@engabelal" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
@@ -861,20 +867,29 @@
     <!-- Manifest -->
     <link rel="manifest" href="./manifest.json" />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) - Person Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://cloudycode.dev/#person",
       "name": "Ahmed Belal",
+      "alternateName": "engabelal",
       "url": "https://cloudycode.dev",
-      "image": "https://cloudycode.dev/images/avatar.webp",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://cloudycode.dev/images/avatar.webp",
+        "width": 421,
+        "height": 421
+      },
       "jobTitle": "DevOps & Cloud Engineer",
       "worksFor": {
         "@type": "Organization",
-        "name": "CloudyCode.dev"
+        "name": "CloudyCode.dev",
+        "url": "https://cloudycode.dev"
       },
-      "description": "Building reliable cloud infrastructure and automating systems with AWS, Terraform, and CI/CD.",
+      "description": "DevOps & Cloud Engineer with 12+ years of experience building reliable cloud infrastructure and automating systems with AWS, Azure, Terraform, and CI/CD.",
+      "email": "eng.abelal@gmail.com",
       "sameAs": [
         "https://github.com/engabelal",
         "https://www.linkedin.com/in/engabelal/",
@@ -890,62 +905,169 @@
         "Terraform",
         "Ansible",
         "CI/CD",
-        "Infrastructure as Code"
+        "Infrastructure as Code",
+        "VMware",
+        "Linux",
+        "Automation"
       ],
       "hasCredential": [
         {
           "@type": "EducationalOccupationalCredential",
           "name": "AWS Certified DevOps Engineer - Professional",
           "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Amazon Web Services"
+          },
           "dateCreated": "2025-10"
         },
         {
           "@type": "EducationalOccupationalCredential",
           "name": "Microsoft Azure Solutions Architect Expert",
           "credentialCategory": "Expert Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Microsoft"
+          },
           "dateCreated": "2024-01"
         },
         {
           "@type": "EducationalOccupationalCredential",
           "name": "Red Hat Certified Engineer (RHCE)",
           "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Red Hat"
+          },
           "dateCreated": "2016-09"
         }
       ]
     }
     </script>
+
+    <!-- Structured Data (JSON-LD) - Website Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://cloudycode.dev/#website",
+      "url": "https://cloudycode.dev",
+      "name": "CloudyCode.dev",
+      "description": "DevOps & Cloud Engineering Portfolio - Building reliable cloud infrastructure and automating systems",
+      "publisher": {
+        "@id": "https://cloudycode.dev/#person"
+      },
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Structured Data (JSON-LD) - Portfolio Projects -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "DevOps & Cloud Projects",
+      "name": "DevOps & Cloud Projects Portfolio",
+      "description": "Production-ready DevOps and Cloud infrastructure projects",
       "itemListElement": [
         {
           "@type": "SoftwareSourceCode",
           "position": 1,
           "name": "Node.js CI/CD Pipeline",
           "description": "GitHub Actions and Terraform pipeline delivering sub-15-second deployments, automated testing, and zero-downtime releases on AWS EC2.",
-          "programmingLanguage": "JavaScript",
+          "author": {
+            "@id": "https://cloudycode.dev/#person"
+          },
+          "programmingLanguage": ["JavaScript", "HCL"],
           "codeRepository": "https://github.com/engabelal/simple-nodejs-ec2-cicd",
-          "keywords": "CI/CD, GitHub Actions, Terraform, AWS"
+          "keywords": "CI/CD, GitHub Actions, Terraform, AWS, Automation"
         },
         {
           "@type": "SoftwareSourceCode",
           "position": 2,
           "name": "AWS Serverless Event Platform",
           "description": "EventBridge, Lambda, and DynamoDB stack codified as IaC with CloudFront acceleration and automated environment provisioning.",
-          "programmingLanguage": "Python",
+          "author": {
+            "@id": "https://cloudycode.dev/#person"
+          },
+          "programmingLanguage": ["Python", "HCL"],
           "codeRepository": "https://github.com/engabelal/iac-aws-serverless-event",
-          "keywords": "Serverless, Lambda, DynamoDB, AWS"
+          "keywords": "Serverless, Lambda, DynamoDB, AWS, Infrastructure as Code"
         },
         {
           "@type": "SoftwareSourceCode",
           "position": 3,
           "name": "Auto-Scaling Web Infrastructure",
           "description": "Terraform-built AWS blueprint combining EC2 Auto Scaling, Network Load Balancers, and multi-AZ failover for resilient web tiers.",
+          "author": {
+            "@id": "https://cloudycode.dev/#person"
+          },
           "programmingLanguage": "HCL",
           "codeRepository": "https://github.com/engabelal/simple-webapp-ec2-nlb-asg",
-          "keywords": "Terraform, Auto Scaling, AWS, Infrastructure"
+          "keywords": "Terraform, Auto Scaling, AWS, Infrastructure, High Availability"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "position": 4,
+          "name": "MERN Stack Automation with Ansible",
+          "description": "Idempotent Ansible playbooks provisioning MongoDB, Express, React, and Node with hardened configurations and repeatable rollouts.",
+          "author": {
+            "@id": "https://cloudycode.dev/#person"
+          },
+          "programmingLanguage": "YAML",
+          "codeRepository": "https://github.com/engabelal/cm-ansible-mern-stack",
+          "keywords": "Ansible, Configuration Management, MERN, Automation"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "position": 5,
+          "name": "Hardened DevOps AMI with Packer",
+          "description": "Packer pipeline producing CIS-aligned Ubuntu AMIs preloaded with DevOps tooling, CloudWatch telemetry, and security guardrails.",
+          "author": {
+            "@id": "https://cloudycode.dev/#person"
+          },
+          "programmingLanguage": "HCL",
+          "codeRepository": "https://github.com/engabelal/packer-aws-devops-ami",
+          "keywords": "Packer, AWS AMI, Security, DevOps, Infrastructure"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data (JSON-LD) - Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cloudycode.dev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://cloudycode.dev#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Skills",
+          "item": "https://cloudycode.dev#skills"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Projects",
+          "item": "https://cloudycode.dev#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Certifications",
+          "item": "https://cloudycode.dev#certifications"
         }
       ]
     }
