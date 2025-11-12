@@ -1192,6 +1192,22 @@ main#main .introduction .about-header {
   text-align: center;
   margin-top: 6rem;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+main#main .introduction .about-header::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: url('../images/gradient-experience.webp') no-repeat center;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
 }
 
 main#main .introduction .about-section::before {
