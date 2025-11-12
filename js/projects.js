@@ -1,3 +1,12 @@
+// Constants
+const ANIMATION_CONFIG = {
+  FADE_DURATION: 300,
+  STAGGER_DELAY: 100,
+  FOCUS_DELAY: 100
+};
+
+const ITEMS_PER_PAGE = 6;
+
 // Projects Data
 const allProjects = [
   { 
@@ -6,17 +15,6 @@ const allProjects = [
     desc: 'Production-ready containerized deployment using AWS ECS Fargate with automated Blue/Green strategy via CodeDeploy, zero-downtime updates, and GitHub Actions CI/CD.', 
     link: 'https://github.com/engabelal/ecs-fargate-terraform-deployment', 
     category: 'cicd',
-    problem: 'Container deployments causing downtime and lacking automated rollback capabilities',
-    solution: 'Blue/Green deployment with CodeDeploy, modular Terraform (9 modules), GitHub Actions OIDC, and automated rollback on failure',
-    techStack: ['ECS Fargate', 'CodeDeploy', 'Terraform', 'GitHub Actions', 'ALB', 'ECR', 'DynamoDB'],
-    results: ['Zero downtime deployments', 'Automatic rollback', 'Serverless containers', '9 reusable Terraform modules']
-  },
-  { 
-    icon: 'fab fa-docker', 
-    title: 'ECS Fargate Blue/Green Deployment', 
-    desc: 'Production-ready containerized deployment using AWS ECS Fargate with automated Blue/Green strategy via CodeDeploy, zero-downtime updates, and GitHub Actions CI/CD.', 
-    link: 'https://github.com/engabelal/ecs-fargate-terraform-deployment', 
-    category: 'infrastructure',
     problem: 'Container deployments causing downtime and lacking automated rollback capabilities',
     solution: 'Blue/Green deployment with CodeDeploy, modular Terraform (9 modules), GitHub Actions OIDC, and automated rollback on failure',
     techStack: ['ECS Fargate', 'CodeDeploy', 'Terraform', 'GitHub Actions', 'ALB', 'ECR', 'DynamoDB'],
@@ -103,7 +101,6 @@ const allProjects = [
 
 let currentIndex = 0;
 let currentFilter = 'all';
-const itemsPerPage = 6;
 
 function getFilteredProjects() {
   return currentFilter === 'all' 
@@ -112,17 +109,23 @@ function getFilteredProjects() {
 }
 
 function renderProjects() {
-  const container = document.getElementById('projectsList');
-  const filteredProjects = getFilteredProjects();
-  
-  // Smooth fade out
-  container.style.transition = 'opacity 0.3s ease';
-  container.style.opacity = '0';
-  
-  setTimeout(() => {
-    container.innerHTML = '';
-    const start = currentIndex;
-    const end = Math.min(start + itemsPerPage, filteredProjects.length);
+  try {
+    const container = document.getElementById('projectsList');
+    if (!container) {
+      console.error('Projects container not found');
+      return;
+    }
+    
+    const filteredProjects = getFilteredProjects();
+    
+    // Smooth fade out
+    container.style.transition = `opacity ${ANIMATION_CONFIG.FADE_DURATION}ms ease`;
+    container.style.opacity = '0';
+    
+    setTimeout(() => {
+      container.innerHTML = '';
+      const start = currentIndex;
+      const end = Math.min(start + ITEMS_PER_PAGE, filteredProjects.length);
     
     for (let i = start; i < end; i++) {
       const project = filteredProjects[i];
@@ -151,36 +154,48 @@ function renderProjects() {
         setTimeout(() => {
           item.style.transition = 'opacity 0.5s ease';
           item.style.opacity = '1';
-        }, i * 100);
+        }, i * ANIMATION_CONFIG.STAGGER_DELAY);
       });
     });
     
     currentIndex = (end >= filteredProjects.length) ? 0 : end;
     const btn = document.getElementById('loadMoreBtn');
-    if (filteredProjects.length <= itemsPerPage) {
-      btn.style.display = 'none';
-    } else {
-      btn.style.display = 'inline-block';
-      btn.textContent = (currentIndex === 0) ? 'Show Previous' : 'Load More Projects';
+    if (btn) {
+      if (filteredProjects.length <= ITEMS_PER_PAGE) {
+        btn.style.display = 'none';
+      } else {
+        btn.style.display = 'inline-block';
+        btn.textContent = (currentIndex === 0) ? 'Show Previous' : 'Load More Projects';
+      }
     }
-  }, 300);
+    }, ANIMATION_CONFIG.FADE_DURATION);
+  } catch (error) {
+    console.error('Error rendering projects:', error);
+  }
 }
 
 // Load More Button
-document.getElementById('loadMoreBtn').addEventListener('click', renderProjects);
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener('click', renderProjects);
+}
 
 // Filter Buttons
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    currentFilter = btn.dataset.filter;
-    currentIndex = 0;
-    
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    
-    renderProjects();
+try {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFilter = btn.dataset.filter;
+      currentIndex = 0;
+      
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      renderProjects();
+    });
   });
-});
+} catch (error) {
+  console.error('Error setting up filter buttons:', error);
+}
 
 // Project Modal
 let lastProjectFocusedElement = null;
@@ -210,36 +225,56 @@ function trapModalFocus(modal) {
 }
 
 function openProjectModal(project) {
-  lastProjectFocusedElement = document.activeElement;
-  
-  const modal = document.getElementById('projectModal');
-  const iconElement = document.getElementById('projectModalIcon');
-  
-  // Preserve icon classes properly
-  iconElement.className = `cert-modal-icon ${project.icon}`;
-  
-  document.getElementById('projectModalTitle').textContent = project.title;
-  document.getElementById('projectModalProblem').textContent = project.problem;
-  document.getElementById('projectModalSolution').textContent = project.solution;
-  
-  const techStack = document.getElementById('projectModalTech');
-  techStack.innerHTML = project.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('');
-  
-  const results = document.getElementById('projectModalResults');
-  results.innerHTML = project.results.map(result => `<li><i class="fas fa-check-circle"></i> ${result}</li>`).join('');
-  
-  document.getElementById('projectModalLink').href = project.link;
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden', 'false');
-  
-  // Trap focus
-  trapModalFocus(modal);
-  
-  // Focus close button
-  setTimeout(() => {
-    const closeBtn = modal.querySelector('.project-modal-close');
-    if (closeBtn) closeBtn.focus();
-  }, 100);
+  try {
+    lastProjectFocusedElement = document.activeElement;
+    
+    const modal = document.getElementById('projectModal');
+    if (!modal) {
+      console.error('Project modal not found');
+      return;
+    }
+    
+    const iconElement = document.getElementById('projectModalIcon');
+    if (iconElement) {
+      iconElement.className = `cert-modal-icon ${project.icon}`;
+    }
+    
+    const titleElement = document.getElementById('projectModalTitle');
+    if (titleElement) titleElement.textContent = project.title;
+    
+    const problemElement = document.getElementById('projectModalProblem');
+    if (problemElement) problemElement.textContent = project.problem;
+    
+    const solutionElement = document.getElementById('projectModalSolution');
+    if (solutionElement) solutionElement.textContent = project.solution;
+    
+    const techStack = document.getElementById('projectModalTech');
+    if (techStack) {
+      techStack.innerHTML = project.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('');
+    }
+    
+    const results = document.getElementById('projectModalResults');
+    if (results) {
+      results.innerHTML = project.results.map(result => `<li><i class="fas fa-check-circle"></i> ${result}</li>`).join('');
+    }
+    
+    const linkElement = document.getElementById('projectModalLink');
+    if (linkElement) linkElement.href = project.link;
+    
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    
+    // Trap focus
+    trapModalFocus(modal);
+    
+    // Focus close button
+    setTimeout(() => {
+      const closeBtn = modal.querySelector('.project-modal-close');
+      if (closeBtn) closeBtn.focus();
+    }, ANIMATION_CONFIG.FOCUS_DELAY);
+  } catch (error) {
+    console.error('Error opening project modal:', error);
+  }
 }
 
 function closeProjectModal() {
@@ -255,22 +290,26 @@ function closeProjectModal() {
 }
 
 // Event listeners for modal
-const projectModal = document.getElementById('projectModal');
-if (projectModal) {
-  projectModal.addEventListener('click', (e) => {
-    if (e.target.id === 'projectModal') {
-      closeProjectModal();
+try {
+  const projectModal = document.getElementById('projectModal');
+  if (projectModal) {
+    projectModal.addEventListener('click', (e) => {
+      if (e.target.id === 'projectModal') {
+        closeProjectModal();
+      }
+    });
+    
+    const closeBtn = projectModal.querySelector('.project-modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeProjectModal);
     }
-  });
-  
-  const closeBtn = projectModal.querySelector('.project-modal-close');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeProjectModal);
   }
+  
+  window.openProjectModal = openProjectModal;
+  window.closeProjectModal = closeProjectModal;
+  
+  // Initial render
+  renderProjects();
+} catch (error) {
+  console.error('Error initializing project modal:', error);
 }
-
-window.openProjectModal = openProjectModal;
-window.closeProjectModal = closeProjectModal;
-
-// Initial render
-renderProjects();

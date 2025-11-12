@@ -5,7 +5,8 @@ import {
   initParticles, 
   initAOS, 
   initFadeInSections,
-  initWhatIDoAnimation 
+  initWhatIDoAnimation,
+  IMAGE_ERROR_RECHECK_DELAY
 } from './animations.js';
 import { 
   initHeader, 
@@ -73,5 +74,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initModalEscapeHandler();
   
   // Re-check images after DOM is fully loaded
-  setTimeout(initImageErrorHandlers, 1000);
+  setTimeout(initImageErrorHandlers, IMAGE_ERROR_RECHECK_DELAY);
 });
