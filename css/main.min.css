@@ -2929,6 +2929,14 @@ footer#page-footer {
  gap: 2.5rem;
  margin: 0 auto 3rem;
 }
+@keyframes projectGlow {
+ 0%, 100% { 
+ box-shadow: 0 8px 20px rgba(113, 39, 186, 0.25), 0 0 30px rgba(163, 98, 255, 0.15);
+ }
+ 50% { 
+ box-shadow: 0 12px 30px rgba(113, 39, 186, 0.4), 0 0 40px rgba(163, 98, 255, 0.25);
+ }
+}
 .project-list-item {
  display: flex;
  flex-direction: column;
@@ -2938,13 +2946,14 @@ footer#page-footer {
  background: rgba(163, 98, 255, 0.05);
  border: 1px solid rgba(163, 98, 255, 0.15);
  border-radius: 1rem;
- transition: all 0.3s ease;
+ transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ cursor: pointer;
 }
 .project-list-item:hover {
- background: rgba(163, 98, 255, 0.08);
- border-color: rgba(163, 98, 255, 0.3);
+ background: linear-gradient(135deg, rgba(163, 98, 255, 0.15), rgba(113, 39, 186, 0.12));
+ border-color: rgba(163, 98, 255, 0.4);
  transform: translateY(-5px);
- box-shadow: 0 8px 20px rgba(113, 39, 186, 0.25);
+ animation: projectGlow 1.5s ease-in-out infinite;
 }
 .project-list-item i {
  font-size: 3.5rem;

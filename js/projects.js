@@ -132,6 +132,7 @@ function renderProjects() {
       const item = document.createElement('div');
       item.className = 'project-list-item';
       item.style.opacity = '0';
+      item.style.cursor = 'pointer';
       item.innerHTML = `
         <i class="${project.icon}"></i>
         <div class="project-list-content">
@@ -141,7 +142,7 @@ function renderProjects() {
         <button class="project-list-link project-details-btn" data-index="${i}">Details →</button>
       `;
       
-      item.querySelector('.project-details-btn').addEventListener('click', () => openProjectModal(project));
+      item.addEventListener('click', () => openProjectModal(project));
       container.appendChild(item);
     }
     
