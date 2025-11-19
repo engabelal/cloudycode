@@ -1120,6 +1120,13 @@ main#main .introduction .basic-information .quote .judges-a-book {
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
 }
 
+main#main .introduction .basic-information .quote .judges-a-book .purple-text-light {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--purple-light);
+  background-clip: unset;
+}
+
 main#main .introduction .basic-information .quote .affirmative {
   font-size: 1.7rem;
 }
