@@ -1737,7 +1737,7 @@ main#main .introduction .about-stat-label {
 /* mobile L */
 @media screen and (max-width: 425px) {
   main#main .introduction {
-    padding: 6rem 0 10rem 0;
+    padding: 4rem 0 10rem 0;
   }
 
   main#main .introduction .about-section {
