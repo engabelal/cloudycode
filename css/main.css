@@ -8,7 +8,7 @@
   --purple-light: #a362ff;
   --purple-dark: #1a0b2e;
   --purple-tag-project: #9857d3;
-  --background: #11071f;
+  --background: #0a0118; /* Darker, richer background */
 
   /* Primary */
   --purple-primary: #7127ba;
@@ -89,6 +89,24 @@ body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(163, 98, 255, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(163, 98, 255, 0.5);
 }
 
 /* Particles.js Background */
@@ -1045,7 +1063,8 @@ main#main .introduction .basic-information .me .arrow .greeting {
 main#main .introduction .basic-information .me .avatar .avatar-image {
   margin-left: -10px;
   opacity: 0;
-  animation: avatarFadeIn 1s ease-out both;
+  animation: avatarFadeIn 1s ease-out both, avatarFloat 6s ease-in-out infinite 1s;
+  filter: drop-shadow(0 10px 30px rgba(113, 39, 186, 0.3));
 }
 
 @keyframes avatarFadeIn {
@@ -1057,6 +1076,11 @@ main#main .introduction .basic-information .me .avatar .avatar-image {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes avatarFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 main#main .introduction .basic-information .quote {
@@ -1084,9 +1108,16 @@ main#main .introduction .basic-information .quote .who {
 }
 
 main#main .introduction .basic-information .quote .judges-a-book {
-  font-size: 5.5rem;
-  line-height: 130%;
-  margin-top: 1.5rem;
+  font-size: 6rem;
+  line-height: 120%;
+  margin-top: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
 }
 
 main#main .introduction .basic-information .quote .affirmative {
